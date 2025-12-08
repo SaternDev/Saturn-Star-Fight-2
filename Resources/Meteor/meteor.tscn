@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dfsl4rlftabix"]
+
+[ext_resource type="Texture2D" uid="uid://cushlpntmcuae" path="res://Sprites/Meteorito.png" id="1_4hssa"]
+[ext_resource type="Script" uid="uid://bp7dpfw85ir8m" path="res://Scripts/meteor.gd" id="1_vs5h4"]
+[ext_resource type="Texture2D" uid="uid://bibq4bsta4b2s" path="res://Sprites/MeteoritoSheet.png" id="2_sjt64"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hssa"]
+atlas = ExtResource("2_sjt64")
+region = Rect2(0, 0, 29, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjt64"]
+atlas = ExtResource("2_sjt64")
+region = Rect2(0, 32, 29, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs5h4"]
+atlas = ExtResource("2_sjt64")
+region = Rect2(0, 64, 29, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fje7r"]
+atlas = ExtResource("2_sjt64")
+region = Rect2(0, 96, 29, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kxlv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hssa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjt64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs5h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fje7r")
+}],
+"loop": false,
+"name": &"Explosión",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4hssa")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4hssa"]
+radius = 12.0415945
+
+[node name="Meteorito" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_vs5h4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_1kxlv")
+animation = &"Explosión"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+position = Vector2(2, 4)
+shape = SubResource("CircleShape2D_4hssa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

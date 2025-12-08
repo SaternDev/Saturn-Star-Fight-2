@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgw0rxrd8kcyq"]
+
+[ext_resource type="Script" uid="uid://dl32thlfcath8" path="res://Scripts/bullet.gd" id="1_hrawn"]
+[ext_resource type="Texture2D" uid="uid://b44ri5xnq8yil" path="res://Sprites/Bullet.png" id="1_kciii"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrawn"]
+radius = 11.0
+
+[node name="Bullet" type="RigidBody2D"]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_hrawn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6594573, 0.6594573)
+texture = ExtResource("1_kciii")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 3)
+scale = Vector2(0.6904712, 0.6904712)
+shape = SubResource("CapsuleShape2D_hrawn")

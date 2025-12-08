@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqtd153dhg05n"]
+
+[ext_resource type="Texture2D" uid="uid://ckt3vtb0dpg0j" path="res://Sprites/Button.png" id="1_6gmfs"]
+[ext_resource type="Texture2D" uid="uid://cj02kwsxltqvo" path="res://Sprites/ShootButton.png" id="2_klc0v"]
+
+[node name="Controlls" type="CanvasLayer"]
+
+[node name="MovementButtons" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -139.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MoveRight" type="TouchScreenButton" parent="MovementButtons"]
+self_modulate = Color(1, 1, 1, 0.85490197)
+position = Vector2(81, -21.999998)
+scale = Vector2(2.5, 5)
+texture_normal = ExtResource("1_6gmfs")
+texture_pressed = ExtResource("1_6gmfs")
+action = "Derecha"
+
+[node name="MoveLeft" type="TouchScreenButton" parent="MovementButtons"]
+self_modulate = Color(1, 1, 1, 0.85490197)
+position = Vector2(80.00001, 138)
+rotation = -3.1415927
+scale = Vector2(2.5, 5)
+texture_normal = ExtResource("1_6gmfs")
+texture_pressed = ExtResource("1_6gmfs")
+action = "Izquierda"
+
+[node name="ShootButtons" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 19.0
+offset_right = 163.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ShootButtons"]
+self_modulate = Color(1, 0.8039216, 0.76862746, 0.9254902)
+position = Vector2(162.00002, 108)
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_klc0v")
+texture_pressed = ExtResource("2_klc0v")
+action = "Shoot"

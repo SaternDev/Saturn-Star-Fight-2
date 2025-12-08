@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://r0qel3o0n6l"]
+
+[ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/SpriteNave.png" id="1_jae6n"]
+[ext_resource type="Script" uid="uid://cl0ilqujwweey" path="res://Scripts/player_ship.gd" id="1_pkijf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idj7w"]
+radius = 8.0
+height = 16.0
+
+[node name="PlayerShip" type="CharacterBody2D"]
+script = ExtResource("1_pkijf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_jae6n")
+offset = Vector2(-0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_idj7w")
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+position = Vector2(0, -23)
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
