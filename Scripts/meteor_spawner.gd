@@ -22,4 +22,4 @@ func _process(_delta: float) -> void:
 
 
 func _on_game_controller_difficult_change(difficult) -> void:
-	MeteorSpeed += difficult * 10
+	MeteorSpeed += difficult * 3
