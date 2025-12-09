@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Saturn Star Fight 2"
-config/version="2"
+config/version="3"
 run/main_scene="uid://bv3ayibh8rgu0"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="uid://c4b1v38l1i5vh"
+config/icon="uid://dfl3oi2jnc3bu"
 
 [display]
 
