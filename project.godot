@@ -14,7 +14,7 @@ config/name="Saturn Star Fight 2"
 config/version="2"
 run/main_scene="uid://bv3ayibh8rgu0"
 config/features=PackedStringArray("4.5", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://c4b1v38l1i5vh"
 
 [display]
 
