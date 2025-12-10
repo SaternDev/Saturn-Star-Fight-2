@@ -30,11 +30,10 @@ func PointsGained():
 	pointschanged.emit(points)
 
 
-func _on_player_ship_life_changed() -> void:
-	if live < 2:
+func _on_player_ship_life_changed(animationStoped) -> void:
+	if live < 2 and animationStoped:
 		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
 		get_tree().paused = true
-		print("Game Over")
 	else:
 		live -= 1
 		hpChange.emit(live)

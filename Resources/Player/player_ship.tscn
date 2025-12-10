@@ -1,19 +1,99 @@
-[gd_scene load_steps=4 format=3 uid="uid://r0qel3o0n6l"]
+[gd_scene load_steps=15 format=3 uid="uid://r0qel3o0n6l"]
 
-[ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/SpriteNave.png" id="1_jae6n"]
+[ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/ShipSprites/SpriteNave.png" id="1_jae6n"]
 [ext_resource type="Script" uid="uid://cl0ilqujwweey" path="res://Scripts/player_ship.gd" id="1_pkijf"]
+[ext_resource type="Texture2D" uid="uid://c1hfs7p8j02yq" path="res://Sprites/ShipSprites/Ship_Dead_Sheet.png" id="2_hhsqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inf54"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxyh5"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1rqb"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h61mi"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbisi"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rkjk"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sycme"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0mbd"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6y75"]
+atlas = ExtResource("2_hhsqt")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_318x0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inf54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxyh5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1rqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h61mi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbisi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rkjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sycme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0mbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6y75")
+}],
+"loop": false,
+"name": &"Explosion",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jae6n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_idj7w"]
 radius = 8.0
 height = 16.0
 
 [node name="PlayerShip" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_pkijf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("1_jae6n")
-offset = Vector2(-0.5, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, 0)
+sprite_frames = SubResource("SpriteFrames_318x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_idj7w")

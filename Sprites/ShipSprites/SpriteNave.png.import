@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br1m4mue7e7qw"
-path="res://.godot/imported/SpriteNave.png-c1a891908cd894f85f7084c88fb92ec9.ctex"
+path="res://.godot/imported/SpriteNave.png-79d04d4f79d2d3b0c868abb9428d6fb2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/SpriteNave.png"
-dest_files=["res://.godot/imported/SpriteNave.png-c1a891908cd894f85f7084c88fb92ec9.ctex"]
+source_file="res://Sprites/ShipSprites/SpriteNave.png"
+dest_files=["res://.godot/imported/SpriteNave.png-79d04d4f79d2d3b0c868abb9428d6fb2.ctex"]
 
 [params]
 
