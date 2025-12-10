@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var difficultity: Label = $GameUI/Difficultity/Difficultity
 @onready var health_img: TextureRect = $GameUI/Lives/HealthImg
 
+#Health bar textures
 const HEAL_BAR_SHIP_2 = preload("uid://dtd73qqtvw77m")
 const HEAL_BAR_SHIP_3 = preload("uid://dh328kf4nfkg1")
 const HEAL_BAR_SHIP_4 = preload("uid://qvpcil8hm5cl")

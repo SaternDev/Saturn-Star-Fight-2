@@ -6,6 +6,7 @@ signal hpChange()
 
 @onready var dificulty_increaser: Timer = $DificultyIncreaser
 @onready var meteor_spawner: Node2D = $"../MeteorSpawner"
+const GAME_OVER_MENU = preload("uid://be7ro0xlmjd0h")
 
 @export var points:int
 var difficult:int
@@ -31,7 +32,8 @@ func PointsGained():
 
 func _on_player_ship_life_changed() -> void:
 	if live < 2:
-		get_tree().quit()
+		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
+		get_tree().paused = true
 		print("Game Over")
 	else:
 		live -= 1
