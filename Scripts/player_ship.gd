@@ -11,6 +11,7 @@ const BULLET = preload("uid://dgw0rxrd8kcyq")
 
 @export var speed = 220
 var lives = 3
+var exploting = false
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Shoot"):
@@ -21,7 +22,8 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")
-	velocity.x = Direction * speed
+	if not exploting:
+		velocity.x = Direction * speed
 	move_and_slide()
 
 func shoot():
@@ -38,5 +40,6 @@ func shoot():
 func playerHit():
 	lives -= 1
 	if lives == 0:
+		exploting = true
 		animated_sprite_2d.play("Explosion")
 	lifeChanged.emit(false)

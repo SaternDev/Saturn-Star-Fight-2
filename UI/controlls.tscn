@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqtd153dhg05n"]
+[gd_scene load_steps=4 format=3 uid="uid://dqtd153dhg05n"]
 
-[ext_resource type="Texture2D" uid="uid://ckt3vtb0dpg0j" path="res://Sprites/Button.png" id="1_6gmfs"]
+[ext_resource type="Texture2D" uid="uid://ckt3vtb0dpg0j" path="res://Sprites/ButtonRight.png" id="1_6gmfs"]
+[ext_resource type="Texture2D" uid="uid://c2cpu6was0lt4" path="res://Sprites/ButtonLeft.png" id="2_ali1f"]
 [ext_resource type="Texture2D" uid="uid://cj02kwsxltqvo" path="res://Sprites/ShootButton.png" id="2_klc0v"]
 
 [node name="Controlls" type="CanvasLayer"]
@@ -17,19 +18,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="MoveRight" type="TouchScreenButton" parent="MovementButtons"]
-position = Vector2(81, -21.999998)
-scale = Vector2(2.5, 5)
+position = Vector2(81, -21)
+scale = Vector2(2.6, 5)
 texture_normal = ExtResource("1_6gmfs")
 texture_pressed = ExtResource("1_6gmfs")
 action = "Derecha"
+visibility_mode = 1
 
 [node name="MoveLeft" type="TouchScreenButton" parent="MovementButtons"]
-position = Vector2(80.00001, 138)
-rotation = -3.1415927
-scale = Vector2(2.5, 5)
-texture_normal = ExtResource("1_6gmfs")
-texture_pressed = ExtResource("1_6gmfs")
+position = Vector2(0, -21)
+scale = Vector2(2.6, 5)
+texture_normal = ExtResource("2_ali1f")
+texture_pressed = ExtResource("2_ali1f")
 action = "Izquierda"
+visibility_mode = 1
 
 [node name="ShootButtons" type="HBoxContainer" parent="."]
 anchors_preset = 8
@@ -45,8 +47,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="ShootButtons"]
-position = Vector2(162.00002, 108)
+position = Vector2(163, 109)
 scale = Vector2(5, 5)
 texture_normal = ExtResource("2_klc0v")
 texture_pressed = ExtResource("2_klc0v")
 action = "Shoot"
+visibility_mode = 1

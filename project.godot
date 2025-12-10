@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Saturn Star Fight 2"
-config/version="3"
+config/version="4"
 run/main_scene="uid://bv3ayibh8rgu0"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="uid://dfl3oi2jnc3bu"
