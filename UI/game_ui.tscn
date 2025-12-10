@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://du8jrp4avdx0o"]
+[gd_scene load_steps=2 format=3 uid="uid://du8jrp4avdx0o"]
+
+[ext_resource type="Texture2D" uid="uid://csllpi5sn6o2x" path="res://Sprites/HealthBar/HealBarShip.png" id="1_mp46i"]
 
 [node name="game_ui" type="CanvasLayer"]
 
@@ -10,23 +12,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PointsAndLives" type="HBoxContainer" parent="GameUI"]
+[node name="Lives" type="HBoxContainer" parent="GameUI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -169.0
+offset_top = 7.0
+offset_bottom = 44.0
 grow_horizontal = 0
 
-[node name="Points" type="Label" parent="GameUI/PointsAndLives"]
+[node name="HealthImg" type="TextureRect" parent="GameUI/Lives"]
 layout_mode = 2
-text = "Points: "
-horizontal_alignment = 1
-
-[node name="Lives" type="Label" parent="GameUI/PointsAndLives"]
-layout_mode = 2
-text = "Lives: 3"
+texture = ExtResource("1_mp46i")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Difficultity" type="HBoxContainer" parent="GameUI"]
 layout_mode = 0
@@ -40,3 +40,14 @@ text = "Difficultity: "
 [node name="Difficultity" type="Label" parent="GameUI/Difficultity"]
 layout_mode = 2
 text = "0"
+
+[node name="Points" type="VBoxContainer" parent="GameUI"]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 58.0
+offset_right = 314.0
+offset_bottom = 98.0
+
+[node name="PointsLabel" type="Label" parent="GameUI/Points"]
+layout_mode = 2
+text = "Points: 0"
