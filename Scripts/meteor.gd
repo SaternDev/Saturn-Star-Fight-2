@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	if body is Bullet:
+	if body is Bullet and not destroying:
 		body.Destroy()
 		destroying = true
 		animated_sprite_2d.play("Explosión")
@@ -34,5 +34,4 @@ func _on_body_entered(body: Node) -> void:
 		destroying = true
 		animated_sprite_2d.play("Explosión")
 		animated_sprite_2d.speed_scale = 3
-		gameController.PointsGained()
 		body.playerHit()

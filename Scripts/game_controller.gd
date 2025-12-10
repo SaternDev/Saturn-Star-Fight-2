@@ -26,10 +26,13 @@ func _process(_delta: float) -> void:
 
 func PointsGained():
 	points += 1
-	print("Points Gained")
 	pointschanged.emit(points)
 
 
 func _on_player_ship_life_changed() -> void:
-	live -= 1
-	hpChange.emit(live)
+	if live < 2:
+		get_tree().quit()
+		print("Game Over")
+	else:
+		live -= 1
+		hpChange.emit(live)
