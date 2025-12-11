@@ -44,6 +44,13 @@ theme_override_font_sizes/font_size = 22
 text = "Jugar"
 flat = true
 
+[node name="ShopBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_font_sizes/font_size = 22
+text = "Shop"
+flat = true
+
 [node name="OptionsBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
@@ -146,8 +153,6 @@ offset_top = 546.0
 offset_right = 66.0
 offset_bottom = 577.0
 text = "Atrás"
-
-[node name="SaveConfiguration" type="Node2D" parent="." groups=["Persist"]]
 
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]

@@ -11,7 +11,7 @@ size = Vector2(20, 110)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="GameController" type="Node2D" parent="." groups=["Persist"]]
+[node name="GameController" type="Node2D" parent="."]
 script = ExtResource("4_o15vh")
 
 [node name="DificultyIncreaser" type="Timer" parent="GameController"]

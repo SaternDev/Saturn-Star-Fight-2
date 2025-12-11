@@ -10,11 +10,6 @@ const GAME_OVER_MENU = preload("uid://be7ro0xlmjd0h")
 @export var difficult:int
 @export var live:int = 3
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#Difficult Changer
@@ -29,6 +24,8 @@ func PointsGained():
 func _on_player_ship_life_changed(animationStoped) -> void:
 	if live < 2 and animationStoped:
 		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
+		GlobalSave.game_data["total_points"] += points
+		GlobalSave.save_game()
 		get_tree().paused = true
 	else:
 		live -= 1
