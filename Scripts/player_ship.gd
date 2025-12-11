@@ -9,12 +9,18 @@ const BULLET = preload("uid://dgw0rxrd8kcyq")
 @onready var shoot_cooldown: Timer = $ShootCooldown
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoot_audio: AudioStreamPlayer = $ShootAudio
+@onready var game_controller: Node2D = $"../GameController"
 
 @export var speed = 220
 var lives = 3
 var exploting = false
+var difficulty:int
+var shootCooldown = 0.3
 
 func _process(_delta: float) -> void:
+	#Gets Difficulty values
+	difficulty = game_controller.difficult
+	
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
 	if animated_sprite_2d.animation == "Explosion":
@@ -23,9 +29,20 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")
+	
+	#Changes in playeer speed based in Difficulty
+	if difficulty > 4:
+		speed = 230
+		shootCooldown = 0.2
+	elif difficulty > 9:
+		speed = 240
+		shootCooldown = 0.1
+	elif difficulty > 15:
+		speed = 260
+		shootCooldown = 0.05
 	#Si no está explotando se mueve
 	if not exploting:
-		velocity.x = Direction * speed
+			velocity.x = Direction * speed
 	#Si está explotando deja de moverse
 	if exploting:
 		velocity.x = 0
@@ -34,7 +51,7 @@ func _physics_process(_delta: float) -> void:
 
 func shoot():
 	if shoot_cooldown.is_stopped():
-		shoot_cooldown.start(0.3)
+		shoot_cooldown.start(shootCooldown)
 		
 		if BULLET == null:
 			return

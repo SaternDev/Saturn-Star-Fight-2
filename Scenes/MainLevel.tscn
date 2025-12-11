@@ -45,8 +45,5 @@ position = Vector2(334, 382)
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_o15vh")
 
-[connection signal="difficultChange" from="GameController" to="game_ui" method="_on_game_controller_difficult_change"]
-[connection signal="difficultChange" from="GameController" to="MeteorSpawner" method="_on_game_controller_difficult_change"]
 [connection signal="hpChange" from="GameController" to="game_ui" method="_on_game_controller_hp_change"]
-[connection signal="pointschanged" from="GameController" to="game_ui" method="_on_game_controller_pointschanged"]
 [connection signal="lifeChanged" from="PlayerShip" to="GameController" method="_on_player_ship_life_changed"]
