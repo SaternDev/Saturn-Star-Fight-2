@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://r0qel3o0n6l"]
+[gd_scene load_steps=16 format=3 uid="uid://r0qel3o0n6l"]
 
 [ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/ShipSprites/SpriteNave.png" id="1_jae6n"]
 [ext_resource type="Script" uid="uid://cl0ilqujwweey" path="res://Scripts/player_ship.gd" id="1_pkijf"]
 [ext_resource type="Texture2D" uid="uid://c1hfs7p8j02yq" path="res://Sprites/ShipSprites/Ship_Dead_Sheet.png" id="2_hhsqt"]
+[ext_resource type="AudioStream" uid="uid://b7nuxm1ft12ly" path="res://Audio/ShootAudio.mp3" id="4_inf54"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_inf54"]
 atlas = ExtResource("2_hhsqt")
@@ -104,3 +105,7 @@ position = Vector2(0, -23)
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="ShootAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_inf54")
+volume_db = -20.0

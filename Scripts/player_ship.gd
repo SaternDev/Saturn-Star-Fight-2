@@ -8,6 +8,7 @@ const BULLET = preload("uid://dgw0rxrd8kcyq")
 @onready var bullet_spawn: Node2D = $BulletSpawn
 @onready var shoot_cooldown: Timer = $ShootCooldown
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var shoot_audio: AudioStreamPlayer = $ShootAudio
 
 @export var speed = 220
 var lives = 3
@@ -22,8 +23,13 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")
+	#Si no está explotando se mueve
 	if not exploting:
 		velocity.x = Direction * speed
+	#Si está explotando deja de moverse
+	if exploting:
+		velocity.x = 0
+		
 	move_and_slide()
 
 func shoot():
@@ -36,6 +42,9 @@ func shoot():
 		var bulletInstantiate = BULLET.instantiate()
 		bulletInstantiate.position = bullet_spawn.global_position
 		get_tree().current_scene.add_child(bulletInstantiate)
+		
+		#Playing Shoot Audio
+		shoot_audio.play()
 
 func playerHit():
 	lives -= 1

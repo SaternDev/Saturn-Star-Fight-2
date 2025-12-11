@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if not destroying:
 		position.y += delta * speed
 	
-	#Waits untill the animation of destroying stops and delets de node
+	#Waits untill the animation of destroying stops and delets de nodedad
 	if not animated_sprite_2d.is_playing() and destroying:
 		queue_free()
 
