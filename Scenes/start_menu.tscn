@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx8ckmq68eirw"]
+
+[ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_juhg0")
+
+[node name="StartMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -186.0
+offset_right = 112.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/CenterContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="StartMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6888266, 0.13857564, 0.6758372, 1)
+theme_override_font_sizes/font_size = 32
+text = "Saturn Star Fight"
+
+[node name="PlayBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_font_sizes/font_size = 22
+text = "Jugar"
+flat = true
+
+[node name="ExitBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.10758302, 0.22811851, 0.5143306, 1)
+theme_override_font_sizes/font_size = 22
+text = "Exit"
+flat = true
+
+[connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
+[connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]

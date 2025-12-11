@@ -1,14 +1,11 @@
 extends CanvasLayer
 
-@onready var button: Button = $GameOverUI/VBoxContainer/Button
+@onready var play_again_btn: Button = $GameOverUI/VBoxContainer/PlayAgainBtn
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_play_again_btn_button_down() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	if button.button_pressed:
-		get_tree().paused = false
-		get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
+func _on_start_menu_btn_button_down() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")

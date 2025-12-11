@@ -33,9 +33,9 @@ stretch_mode = 5
 
 [node name="Difficultity" type="HBoxContainer" parent="GameUI"]
 layout_mode = 0
-offset_top = 54.0
+offset_top = 32.0
 offset_right = 104.0
-offset_bottom = 94.0
+offset_bottom = 72.0
 
 [node name="DifficultityTxt" type="Label" parent="GameUI/Difficultity"]
 layout_mode = 2

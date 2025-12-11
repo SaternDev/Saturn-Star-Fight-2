@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://loyf60om5jcl" path="res://Scripts/game_over_menu.gd" id="1_jobbv"]
 
 [sub_resource type="FontFile" id="FontFile_x1am1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/48/0/ascent = 0.0
 cache/0/48/0/descent = 0.0
 cache/0/48/0/underline_position = 0.0
@@ -42,9 +45,19 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="GameOverUI/VBoxContainer"]
+[node name="PlayAgainBtn" type="Button" parent="GameOverUI/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.5739927, 0.9945602, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.57254905, 0.99607843, 1)
 text = "Play Again"
 flat = true
+
+[node name="StartMenuBtn" type="Button" parent="GameOverUI/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.5739927, 0.9945602, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.57254905, 0.99607843, 1)
+text = "Menu"
+flat = true
+
+[connection signal="button_down" from="GameOverUI/VBoxContainer/PlayAgainBtn" to="." method="_on_play_again_btn_button_down"]
+[connection signal="button_down" from="GameOverUI/VBoxContainer/StartMenuBtn" to="." method="_on_start_menu_btn_button_down"]
