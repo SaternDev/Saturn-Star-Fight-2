@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://du8jrp4avdx0o"]
 
-[ext_resource type="Script" uid="uid://bxxj8sryr4vu0" path="res://Scripts/game_ui.gd" id="1_kfjql"]
+[ext_resource type="Script" uid="uid://bxxj8sryr4vu0" path="res://Scripts/GameUIScripts/game_ui.gd" id="1_kfjql"]
 [ext_resource type="Texture2D" uid="uid://csllpi5sn6o2x" path="res://Sprites/HealthBar/HealBarShip.png" id="1_mp46i"]
 
 [node name="game_ui" type="CanvasLayer"]

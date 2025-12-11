@@ -29,7 +29,6 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")
-	
 	#Changes in playeer speed based in Difficulty
 	if difficulty > 4:
 		speed = 230

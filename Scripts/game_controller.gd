@@ -18,7 +18,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#Difficult Changer
-	if dificulty_increaser.is_stopped() and difficult < 15:
+	if dificulty_increaser.is_stopped() and difficult < 30:
 		dificulty_increaser.start(30.)
 		difficult += 1
 
