@@ -16,10 +16,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var speed = get_parent().MeteorSpeed
 	
+	if position.y > 650:
+		queue_free()
+	
+	#Handle Meteor Movement
 	if not destroying:
 		position.y += delta * speed
 	
-	if animated_sprite_2d.frame == 3:
+	#Waits untill the animation of destroying stops and delets de node
+	if not animated_sprite_2d.is_playing() and destroying:
 		queue_free()
 
 
