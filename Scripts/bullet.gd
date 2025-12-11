@@ -8,7 +8,7 @@ extends RigidBody2D
 func _process(delta: float) -> void:
 	position.y -= delta * speed
 	
-	if position.y < -1000:
+	if position.y < 0:
 		Destroy()
 
 func Destroy():

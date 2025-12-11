@@ -4,6 +4,8 @@ var save_path = "user://save_game.dat"
 
 var game_data : Dictionary = {
 	"total_points" = 0,
+	"max_score" = 0,
+	"languaje" = "English"
 }
 
 func save_game() -> void:

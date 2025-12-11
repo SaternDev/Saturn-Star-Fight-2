@@ -23,12 +23,14 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
+	
 	if animated_sprite_2d.animation == "Explosion":
 		if not animated_sprite_2d.is_playing():
 			lifeChanged.emit(true)
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")
+	
 	#Changes in playeer speed based in Difficulty
 	if difficulty > 4:
 		speed = 230
@@ -39,9 +41,11 @@ func _physics_process(_delta: float) -> void:
 	elif difficulty > 15:
 		speed = 260
 		shootCooldown = 0.05
+	
 	#Si no está explotando se mueve
 	if not exploting:
 			velocity.x = Direction * speed
+	
 	#Si está explotando deja de moverse
 	if exploting:
 		velocity.x = 0

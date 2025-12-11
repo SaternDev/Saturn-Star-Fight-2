@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var game_controller: Node2D = $"../GameController"
 @onready var waiting_spawn: Timer = $WaitingSpawn
+var maxTimeWait = 3
 const METEOR = preload("uid://dfsl4rlftabix")
 
 var MeteorSpeed:int = 80
@@ -18,8 +19,14 @@ func _process(_delta: float) -> void:
 	meteorInstantiate.position.x = randf_range($Position1.position.x, $Position2.position.x)
 	if waiting_spawn.is_stopped():
 		add_child(meteorInstantiate)
-		waiting_spawn.start(randf_range(0.,3.))
+		waiting_spawn.start(randf_range(0.,maxTimeWait))
 
 
 func _on_game_controller_difficult_change(difficult) -> void:
-	MeteorSpeed += difficult * 3
+	MeteorSpeed += difficult * 1.5
+	if difficult == 5:
+		maxTimeWait = 2
+	elif difficult == 10:
+		maxTimeWait = 1.5
+	elif difficult == 15:
+		maxTimeWait = 1

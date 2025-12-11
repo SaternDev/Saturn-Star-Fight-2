@@ -41,7 +41,7 @@ text = "Saturn Star Fight"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
-text = "Jugar"
+text = "Play"
 flat = true
 
 [node name="ShopBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
@@ -117,19 +117,19 @@ layout_mode = 2
 
 [node name="IdiomaLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
 layout_mode = 2
-text = "Idioma: "
+text = "Idiom: "
 
 [node name="ControlesLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
 visible = false
 layout_mode = 2
-text = "Controles: "
+text = "Controls: "
 
 [node name="Elecciones" type="VBoxContainer" parent="OptionsMenu/Options/HBoxContainer"]
 layout_mode = 2
 
 [node name="IdiomaOpBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones"]
 layout_mode = 2
-selected = 0
+selected = 1
 item_count = 2
 popup/item_0/text = "Español"
 popup/item_0/id = 0
@@ -152,7 +152,7 @@ offset_left = 3.0
 offset_top = 546.0
 offset_right = 66.0
 offset_bottom = 577.0
-text = "Atrás"
+text = "Back"
 
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]

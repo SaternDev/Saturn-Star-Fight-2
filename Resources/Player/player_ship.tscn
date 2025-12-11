@@ -94,13 +94,16 @@ script = ExtResource("1_pkijf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-0.5, 0)
+scale = Vector2(1.5321219, 1.5321219)
 sprite_frames = SubResource("SpriteFrames_318x0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.5321219, 1.5321219)
 shape = SubResource("CapsuleShape2D_idj7w")
 
 [node name="BulletSpawn" type="Node2D" parent="."]
-position = Vector2(0, -23)
+position = Vector2(0, -32)
+scale = Vector2(1.5321219, 1.5321219)
 
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.3
