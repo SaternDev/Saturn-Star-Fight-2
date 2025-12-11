@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cx8ckmq68eirw"]
+[gd_scene load_steps=3 format=3 uid="uid://cx8ckmq68eirw"]
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
+[ext_resource type="AudioStream" uid="uid://bku5ldi1bxstp" path="res://Audio/MúsicaMenuInicial.mp3" id="2_jgtwh"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_juhg0")
@@ -49,6 +50,11 @@ theme_override_colors/font_color = Color(0.10758302, 0.22811851, 0.5143306, 1)
 theme_override_font_sizes/font_size = 22
 text = "Exit"
 flat = true
+
+[node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu"]
+stream = ExtResource("2_jgtwh")
+volume_db = -12.429
+autoplay = true
 
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]
