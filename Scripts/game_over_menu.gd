@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-@onready var play_again_btn: Button = $GameOverUI/VBoxContainer/PlayAgainBtn
-
 func _ready() -> void:
 	$GameOverUI/VBoxContainer2/maxScore.text = str(GlobalSave.game_data["max_score"])
 

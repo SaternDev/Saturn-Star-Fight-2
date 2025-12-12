@@ -29,6 +29,8 @@ func _on_player_ship_life_changed(animationStoped) -> void:
 	if live < 2 and animationStoped:
 		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
 		
+		$"../game_ui".visible = false
+		
 		GlobalSave.game_data["total_points"] += points
 		GlobalSave.save_game()
 		get_tree().paused = true
