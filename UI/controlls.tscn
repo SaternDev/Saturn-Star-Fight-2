@@ -23,7 +23,6 @@ scale = Vector2(2.6, 5)
 texture_normal = ExtResource("1_6gmfs")
 texture_pressed = ExtResource("1_6gmfs")
 action = "Derecha"
-visibility_mode = 1
 
 [node name="MoveLeft" type="TouchScreenButton" parent="MovementButtons"]
 position = Vector2(0, -21)
@@ -31,7 +30,6 @@ scale = Vector2(2.6, 5)
 texture_normal = ExtResource("2_ali1f")
 texture_pressed = ExtResource("2_ali1f")
 action = "Izquierda"
-visibility_mode = 1
 
 [node name="ShootButtons" type="HBoxContainer" parent="."]
 anchors_preset = 8
@@ -52,4 +50,3 @@ scale = Vector2(5, 5)
 texture_normal = ExtResource("2_klc0v")
 texture_pressed = ExtResource("2_klc0v")
 action = "Shoot"
-visibility_mode = 1

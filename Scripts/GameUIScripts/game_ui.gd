@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 	var points = game_controller.points
 	var difficulty = game_controller.difficult
 	
-	points_label.text = str("Points: ", points)
+	points_label.text = str(TranslationServer.translate("GameUI_lbl_points"), points)
 	difficultity.text = str(difficulty) 
 
 func _on_game_controller_hp_change(live) -> void:

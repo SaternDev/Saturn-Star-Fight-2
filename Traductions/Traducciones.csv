@@ -1,0 +1,16 @@
+keys,es,en
+Menu_btn_Play,Jugar,Play
+Menu_btn_Shop,Tienda,Shop
+Menu_btn_Options,Opciones,Options
+Menu_btn_Exit,Salir,Exit
+Menu_lbl_TotalPoints,Puntos Totales:  ,Total Points: 
+option_lbl_Title,Opciones,Options
+Options_lbl_Idiom,Idioma:,Idiom:
+Options_btn_Back,Atrás,Back
+GameUI_btn_Pause,Pausar,Pause
+GameUI_lbl_points,Puntos: ,Points: 
+GameUI_lbl_Difficulty,Dificultad:,Difficulty:
+GameUI_lbl_Paused,Juego Pausado,Game Paused
+GameOverMenu_lbl_MaxScore,Tu máxima puntuación es:,Your Max Score is:
+GameOverMenu_lbl_Title,Partida Perdida,Game Over
+GameOverMenu_btn_Play,Jugar,Play

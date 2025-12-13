@@ -52,6 +52,7 @@ animations = [{
 radius = 12.0415945
 
 [node name="Meteorito" type="RigidBody2D"]
+top_level = true
 collision_layer = 4
 collision_mask = 3
 lock_rotation = true

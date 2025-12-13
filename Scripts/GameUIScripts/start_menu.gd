@@ -4,7 +4,11 @@ var controls:int
 
 func _ready() -> void:
 	GlobalSave.load_game()
-	$StartMenu/TotalPointsLbl.text = "Total Points: " + str(GlobalSave.game_data["total_points"])
+	$StartMenu/TotalPointsLbl.text = TranslationServer.translate("Menu_lbl_TotalPoints") + str(GlobalSave.game_data["total_points"])
+	if TranslationServer.get_locale_name("es"):
+		$OptionsMenu/Options/HBoxContainer/Elecciones/IdiomaOpBtn.select(0)
+	elif TranslationServer.get_locale_name("en"):
+		$OptionsMenu/Options/HBoxContainer/Elecciones/IdiomaOpBtn.select(1)
 
 #Changes to Level Scene
 func _on_play_btn_button_down() -> void:
@@ -24,3 +28,11 @@ func _on_options_btn_button_down() -> void:
 func _on_atrás_btn_button_down() -> void:
 	$StartMenu.visible = true
 	$OptionsMenu.visible = false
+
+
+func _on_idioma_op_btn_item_selected(index: int) -> void:
+	if index == 0:
+		TranslationServer.set_locale("es")
+	elif index == 1:
+		TranslationServer.set_locale("en")
+	$StartMenu/TotalPointsLbl.text = TranslationServer.translate("Menu_lbl_TotalPoints") + str(GlobalSave.game_data["total_points"])

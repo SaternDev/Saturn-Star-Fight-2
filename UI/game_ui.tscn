@@ -39,7 +39,7 @@ offset_bottom = 72.0
 
 [node name="DifficultityTxt" type="Label" parent="GameUI/Difficultity"]
 layout_mode = 2
-text = "Difficultity: "
+text = "GameUI_lbl_Difficulty"
 
 [node name="Difficultity" type="Label" parent="GameUI/Difficultity"]
 layout_mode = 2
@@ -54,14 +54,14 @@ offset_bottom = 88.0
 
 [node name="PointsLabel" type="Label" parent="GameUI/Points"]
 layout_mode = 2
-text = "Points: 0"
+text = "GameUI_lbl_points"
 
 [node name="Pause" type="Button" parent="GameUI"]
 process_mode = 3
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
-text = "Pause"
+text = "GameUI_btn_Pause"
 
 [node name="PausedMenu" type="VBoxContainer" parent="GameUI"]
 visible = false
@@ -82,6 +82,6 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_colors/font_color = Color(0.99999994, 0.1943762, 0.14415282, 1)
 theme_override_font_sizes/font_size = 32
-text = "Game Paused"
+text = "GameUI_lbl_Paused"
 
 [connection signal="button_down" from="GameUI/Pause" to="." method="_on_pause_button_down"]

@@ -41,35 +41,35 @@ text = "Saturn Star Fight"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
-text = "Play"
+text = "Menu_btn_Play"
 flat = true
 
 [node name="ShopBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
-text = "Shop"
+text = "Menu_btn_Shop"
 flat = true
 
 [node name="OptionsBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
-text = "Options"
+text = "Menu_btn_Options"
 flat = true
 
 [node name="ExitBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.10758302, 0.22811851, 0.5143306, 1)
 theme_override_font_sizes/font_size = 22
-text = "Exit"
+text = "Menu_btn_Exit"
 flat = true
 
 [node name="TotalPointsLbl" type="Label" parent="StartMenu"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-text = "Total Points: "
+text = "Menu_lbl_TotalPoints"
 
 [node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu"]
 stream = ExtResource("2_jgtwh")
@@ -87,13 +87,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="OptionsLabel" type="Label" parent="OptionsMenu"]
-layout_mode = 0
-offset_left = 105.0
-offset_top = 66.0
-offset_right = 212.0
-offset_bottom = 105.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.56790125
+anchor_right = 0.56790125
+offset_left = -102.0
+offset_top = 79.0
+offset_right = 102.0
+offset_bottom = 118.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 28
-text = "Options"
+text = "option_lbl_Title"
+metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="CenterContainer" parent="OptionsMenu"]
 layout_mode = 1
@@ -117,7 +122,7 @@ layout_mode = 2
 
 [node name="IdiomaLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
 layout_mode = 2
-text = "Idiom: "
+text = "Options_lbl_Idiom"
 
 [node name="ControlesLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
 visible = false
@@ -152,9 +157,10 @@ offset_left = 3.0
 offset_top = 546.0
 offset_right = 66.0
 offset_bottom = 577.0
-text = "Back"
+text = "Options_btn_Back"
 
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]
 [connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]
+[connection signal="item_selected" from="OptionsMenu/Options/HBoxContainer/Elecciones/IdiomaOpBtn" to="." method="_on_idioma_op_btn_item_selected"]
 [connection signal="button_down" from="OptionsMenu/AtrásBtn" to="." method="_on_atrás_btn_button_down"]

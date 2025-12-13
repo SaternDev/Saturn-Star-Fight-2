@@ -1,27 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv3ayibh8rgu0"]
+[gd_scene load_steps=8 format=3 uid="uid://bv3ayibh8rgu0"]
 
 [ext_resource type="PackedScene" uid="uid://r0qel3o0n6l" path="res://Resources/Player/player_ship.tscn" id="1_r7jfx"]
 [ext_resource type="Script" uid="uid://beksrhjf835kf" path="res://Scripts/game_controller.gd" id="4_o15vh"]
 [ext_resource type="PackedScene" uid="uid://dqtd153dhg05n" path="res://UI/controlls.tscn" id="4_ymtjv"]
 [ext_resource type="PackedScene" uid="uid://du8jrp4avdx0o" path="res://UI/game_ui.tscn" id="5_2a20n"]
 [ext_resource type="PackedScene" uid="uid://bsjogu5ckvuhv" path="res://Resources/Meteor/meteor_spawner.tscn" id="5_ymtjv"]
+[ext_resource type="PackedScene" uid="uid://dimap0gk50h0c" path="res://Resources/Backgrounds/BackgroundLvl1.tscn" id="6_2a20n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o15vh"]
 size = Vector2(20, 110)
 
-[node name="Node2D" type="Node2D"]
+[node name="MainLevel" type="Node2D"]
 
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("4_o15vh")
 
 [node name="DificultyIncreaser" type="Timer" parent="GameController"]
-wait_time = 15.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
 [node name="game_ui" parent="." instance=ExtResource("5_2a20n")]
 
 [node name="PlayerShip" parent="." instance=ExtResource("1_r7jfx")]
+top_level = true
 position = Vector2(161, 389)
 
 [node name="MeteorSpawner" parent="." instance=ExtResource("5_ymtjv")]
@@ -44,6 +46,12 @@ position = Vector2(334, 382)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Limits2"]
 position = Vector2(-4, 1)
 shape = SubResource("RectangleShape2D_o15vh")
+
+[node name="BackgroundLvl1" parent="." instance=ExtResource("6_2a20n")]
+show_behind_parent = true
+position = Vector2(161, 288)
+scale = Vector2(5.088887, 5.088887)
+frame_progress = 0.0
 
 [connection signal="difficultChange" from="GameController" to="MeteorSpawner" method="_on_game_controller_difficult_change"]
 [connection signal="hpChange" from="GameController" to="game_ui" method="_on_game_controller_hp_change"]
