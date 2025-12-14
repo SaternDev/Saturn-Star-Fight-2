@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cx8ckmq68eirw"]
+[gd_scene load_steps=6 format=3 uid="uid://cx8ckmq68eirw"]
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
 [ext_resource type="AudioStream" uid="uid://bku5ldi1bxstp" path="res://Audio/MúsicaMenuInicial.mp3" id="2_jgtwh"]
+[ext_resource type="Texture2D" uid="uid://drq4dg77eogof" path="res://Imagenes/saturno_del_chino.png" id="3_626he"]
+[ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
+[ext_resource type="PackedScene" uid="uid://023j7hx0jj52" path="res://UI/shop.tscn" id="4_a43kq"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_juhg0")
@@ -14,53 +17,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="StartMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -110.0
-offset_top = -186.0
-offset_right = 112.0
-offset_bottom = 107.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/CenterContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu/MarginContainer"]
 layout_mode = 2
 
-[node name="GameTitle" type="Label" parent="StartMenu/CenterContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6888266, 0.13857564, 0.6758372, 1)
 theme_override_font_sizes/font_size = 32
 text = "Saturn Star Fight"
 
-[node name="PlayBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+[node name="PlayBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Play"
 flat = true
 
-[node name="ShopBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+[node name="ShopBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Shop"
 flat = true
 
-[node name="OptionsBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+[node name="OptionsBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Options"
 flat = true
 
-[node name="ExitBtn" type="Button" parent="StartMenu/CenterContainer/VBoxContainer"]
+[node name="ExitBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.10758302, 0.22811851, 0.5143306, 1)
+theme_override_colors/font_color = Color(0.8195984, 0, 0.22486502, 1)
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Exit"
 flat = true
@@ -76,6 +76,32 @@ stream = ExtResource("2_jgtwh")
 volume_db = -12.429
 autoplay = true
 mix_target = 2
+
+[node name="PatchNotes" type="Button" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Menu_btn_Notes"
+
+[node name="TextureRect" type="TextureRect" parent="StartMenu"]
+show_behind_parent = true
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_626he")
+expand_mode = 2
 
 [node name="OptionsMenu" type="Control" parent="."]
 visible = false
@@ -159,8 +185,16 @@ offset_right = 66.0
 offset_bottom = 577.0
 text = "Options_btn_Back"
 
-[connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
-[connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]
-[connection signal="button_down" from="StartMenu/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]
+[node name="PathcNotes" parent="." instance=ExtResource("3_m6uer")]
+visible = false
+
+[node name="Shop" parent="." instance=ExtResource("4_a43kq")]
+visible = false
+
+[connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
+[connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/ShopBtn" to="." method="_on_shop_btn_button_down"]
+[connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]
+[connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]
+[connection signal="button_down" from="StartMenu/PatchNotes" to="." method="_on_patch_notes_button_down"]
 [connection signal="item_selected" from="OptionsMenu/Options/HBoxContainer/Elecciones/IdiomaOpBtn" to="." method="_on_idioma_op_btn_item_selected"]
 [connection signal="button_down" from="OptionsMenu/AtrásBtn" to="." method="_on_atrás_btn_button_down"]

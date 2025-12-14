@@ -217,10 +217,11 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 8.0
 }]
 
 [node name="BackgroundLvl1" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_p0oge")
 autoplay = "default"
 frame_progress = 0.2584409
+speed_scale = 0.3

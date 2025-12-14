@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://023j7hx0jj52"]
+
+[ext_resource type="Script" uid="uid://li5iu4rb6dpe" path="res://Scripts/GameUIScripts/shop.gd" id="1_35otv"]
+[ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/ShipSprites/SpriteNave.png" id="1_ajbpu"]
+[ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="1_pogqh"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_35otv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="BtnNormalSkinBuy" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Equipped"
+icon = ExtResource("1_ajbpu")
+
+[node name="BtnPurpleSkinBuy" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+layout_mode = 2
+text = "Equip"
+icon = ExtResource("1_pogqh")
+
+[node name="BtnPurpleSkinBuy3" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Buy"
+icon = ExtResource("1_pogqh")
+
+[node name="AtrásBtn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 546.0
+offset_right = 66.0
+offset_bottom = 577.0
+text = "Options_btn_Back"
+
+[connection signal="button_down" from="MarginContainer/ScrollContainer/GridContainer/BtnNormalSkinBuy" to="." method="_on_btn_normal_skin_buy_button_down"]
+[connection signal="button_down" from="MarginContainer/ScrollContainer/GridContainer/BtnPurpleSkinBuy" to="." method="_on_btn_purple_skin_buy_button_down"]
+[connection signal="button_down" from="AtrásBtn" to="." method="_on_atrás_btn_button_down"]

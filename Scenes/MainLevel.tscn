@@ -16,7 +16,7 @@ size = Vector2(20, 110)
 script = ExtResource("4_o15vh")
 
 [node name="DificultyIncreaser" type="Timer" parent="GameController"]
-wait_time = 20.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 

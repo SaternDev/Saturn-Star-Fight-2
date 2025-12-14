@@ -17,16 +17,22 @@ var exploting = false
 var difficulty:int
 var shootCooldown = 0.3
 
+func _ready() -> void:
+	if GlobalSave.game_data["skin_equipped"] == "Normal":
+		$AnimatedSprite2D.play("default")
+	elif  GlobalSave.game_data["skin_equipped"] == "Purple":
+		$AnimatedSprite2D.play("defaultPurple")
+
 func _process(_delta: float) -> void:
 	#Gets Difficulty values
 	difficulty = game_controller.difficult
 	
-	if Input.is_action_just_pressed("Shoot"):
-		shoot()
-	
 	if animated_sprite_2d.animation == "Explosion":
 		if not animated_sprite_2d.is_playing():
 			lifeChanged.emit(true)
+	else:
+		if Input.is_action_just_pressed("Shoot"):
+			shoot()
 
 func _physics_process(_delta: float) -> void:
 	var Direction = Input.get_axis("Izquierda","Derecha")

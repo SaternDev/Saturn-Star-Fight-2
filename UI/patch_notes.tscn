@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cf3mkoxoyfy2x"]
+
+[node name="PathcNotes" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 46.0
+offset_top = 98.0
+offset_right = -36.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_top = 50
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="NotesLbl" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bugs Solucionados Alpha 0.6:
+- La dificultad cambia la velocidad de los meteoritos
+
+Nuevo en Alpha 0.6:
+- Indicador de puntuación Máxima
+- Aparecen más meteoritos en función a la dificultad
+- Fondo de partida
+- Puntaje Máximo
+- Traducción completa del Español y Inglés
+- Nueva icono de Aplicación
+- Menu de Notas de Parche"
+autowrap_mode = 2
+
+[node name="TitleLbl" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 108.0
+offset_right = 274.0
+offset_bottom = 131.0
+text = "Notes_lbl_PatchNotes"
+horizontal_alignment = 1

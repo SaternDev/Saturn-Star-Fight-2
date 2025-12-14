@@ -14,3 +14,5 @@ GameUI_lbl_Paused,Juego Pausado,Game Paused
 GameOverMenu_lbl_MaxScore,Tu máxima puntuación es:,Your Max Score is:
 GameOverMenu_lbl_Title,Partida Perdida,Game Over
 GameOverMenu_btn_Play,Jugar,Play
+Menu_btn_Notes,Notas,Notes
+Notes_lbl_PatchNotes,Notas de Parche,Patch Notes

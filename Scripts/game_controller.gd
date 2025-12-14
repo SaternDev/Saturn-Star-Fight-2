@@ -15,7 +15,7 @@ const GAME_OVER_MENU = preload("uid://be7ro0xlmjd0h")
 func _process(_delta: float) -> void:
 	#Difficult Changer
 	if dificulty_increaser.is_stopped() and difficult < 15:
-		dificulty_increaser.start(20)
+		dificulty_increaser.start(15)
 		difficult += 1
 		difficultChange.emit(difficult)
 

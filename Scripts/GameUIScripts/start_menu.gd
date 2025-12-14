@@ -36,3 +36,17 @@ func _on_idioma_op_btn_item_selected(index: int) -> void:
 	elif index == 1:
 		TranslationServer.set_locale("en")
 	$StartMenu/TotalPointsLbl.text = TranslationServer.translate("Menu_lbl_TotalPoints") + str(GlobalSave.game_data["total_points"])
+
+
+func _on_patch_notes_button_down() -> void:
+	if $PathcNotes.visible:
+		$PathcNotes.visible = false
+		$StartMenu/MarginContainer.visible = true
+	else:
+		$PathcNotes.visible = true
+		$StartMenu/MarginContainer.visible = false
+
+
+func _on_shop_btn_button_down() -> void:
+	$Shop.visible = true
+	$StartMenu.visible = false

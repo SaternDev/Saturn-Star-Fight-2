@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://r0qel3o0n6l"]
+[gd_scene load_steps=17 format=3 uid="uid://r0qel3o0n6l"]
 
 [ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/ShipSprites/SpriteNave.png" id="1_jae6n"]
 [ext_resource type="Script" uid="uid://cl0ilqujwweey" path="res://Scripts/player_ship.gd" id="1_pkijf"]
 [ext_resource type="Texture2D" uid="uid://c1hfs7p8j02yq" path="res://Sprites/ShipSprites/Ship_Dead_Sheet.png" id="2_hhsqt"]
+[ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="4_fxyh5"]
 [ext_resource type="AudioStream" uid="uid://b7nuxm1ft12ly" path="res://Audio/ShootAudio.mp3" id="4_inf54"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_inf54"]
@@ -81,6 +82,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fxyh5")
+}],
+"loop": true,
+"name": &"defaultPurple",
 "speed": 5.0
 }]
 
