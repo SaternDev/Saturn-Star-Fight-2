@@ -160,7 +160,6 @@ layout_mode = 2
 
 [node name="IdiomaOpBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones"]
 layout_mode = 2
-selected = 1
 item_count = 2
 popup/item_0/text = "Español"
 popup/item_0/id = 0
