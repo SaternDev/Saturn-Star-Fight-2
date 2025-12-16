@@ -6,7 +6,8 @@ var game_data : Dictionary = {
 	"total_points" = 0,
 	"max_score" = 0,
 	"languaje" = "Spanish",
-	"skin_equipped" = "Normal"
+	"skin_equipped" = "Normal",
+	"music_volumen" = 100
 }
 
 func save_game() -> void:
