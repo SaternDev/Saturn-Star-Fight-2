@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-const BULLET = preload("uid://dgw0rxrd8kcyq")
+const BLASTOIN_BULLET = preload("uid://cju7uu4aca17b")
 
+#Bullets Spawners
 @onready var bullet_spawn: Node2D = $BulletSpawn
+@onready var bullet_spawn_2: Node2D = $BulletSpawn2
+
 @onready var shoot_cooldown: Timer = $ShootCooldown
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoot_audio: AudioStreamPlayer = $ShootAudio
@@ -49,6 +52,12 @@ func _physics_process(_delta: float) -> void:
 	#Si no está explotando se mueve
 	if not exploting:
 			velocity.x = Direction * speed
+			if Direction == 0:
+				$AnimatedSprite2D.play("default")
+			elif Direction > 0:
+				$AnimatedSprite2D.play("MovementRight")
+			else:
+				$AnimatedSprite2D.play("MovementLeft")
 	
 	#Si está explotando deja de moverse
 	if exploting:
@@ -60,12 +69,15 @@ func shoot():
 	if shoot_cooldown.is_stopped():
 		shoot_cooldown.start(shootCooldown)
 		
-		if BULLET == null:
+		if BLASTOIN_BULLET == null:
 			return
 			
-		var bulletInstantiate = BULLET.instantiate()
+		var bulletInstantiate = BLASTOIN_BULLET.instantiate()
+		var bulletInstantiate2 = BLASTOIN_BULLET.instantiate()
 		bulletInstantiate.position = bullet_spawn.global_position
+		bulletInstantiate2.position = bullet_spawn_2.global_position
 		get_tree().current_scene.add_child(bulletInstantiate)
+		get_tree().current_scene.add_child(bulletInstantiate2)
 		
 		#Playing Shoot Audio
 		shoot_audio.play()

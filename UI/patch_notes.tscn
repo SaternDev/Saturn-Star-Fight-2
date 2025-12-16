@@ -27,17 +27,16 @@ alignment = 1
 
 [node name="NotesLbl" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Bugs Solucionados Alpha 0.6:
-- La dificultad cambia la velocidad de los meteoritos
+text = "Bugs Solucionados Alpha 0.7:
+- Poder disparar mientras estallas
+- El idioma en opciones si lo cambiabas a ingles y volvías al menu, en el selector de idioma te aparecía como si estuviera en español pero estaba la traducción en inglés
+- Bug sigues \"vivo\" con la nave invisible al recibir dos meteoritos al estallar
+- En la tienda si indica la skin seleccionada y no tiene errores
+- Bug en la selección de idiomas, no indicaba nada cuando entrabas en móvil
 
-Nuevo en Alpha 0.6:
-- Indicador de puntuación Máxima
-- Aparecen más meteoritos en función a la dificultad
-- Fondo de partida
-- Puntaje Máximo
-- Traducción completa del Español y Inglés
-- Nueva icono de Aplicación
-- Menu de Notas de Parche"
+Nuevas Implementaciones de Alpha 0.7:
+- Nueva nave para seleccionar
+- Nuevo menú de Pausa"
 autowrap_mode = 2
 
 [node name="TitleLbl" type="Label" parent="."]

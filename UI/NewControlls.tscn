@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddjijeijebnsb"]
+
+[ext_resource type="Texture2D" uid="uid://e0m1laaek00n" path="res://UI/ControllsSprites/ButtonPlate.png" id="1_g7gq2"]
+[ext_resource type="Texture2D" uid="uid://dyn4v548d6j7g" path="res://UI/ControllsSprites/BtnLeft.png" id="1_qmfda"]
+[ext_resource type="Texture2D" uid="uid://71lnshrguhdh" path="res://UI/ControllsSprites/BtnRight.png" id="2_61yv1"]
+[ext_resource type="Texture2D" uid="uid://qeevvk3q84fw" path="res://UI/ControllsSprites/BtnRight_Pressed.png" id="3_ol5d2"]
+[ext_resource type="Texture2D" uid="uid://c8p8yih6bfv1o" path="res://UI/ControllsSprites/BtnLeft_Pressed.png" id="5_7p43w"]
+[ext_resource type="Texture2D" uid="uid://ciwi0v10u417c" path="res://UI/ControllsSprites/Btn_Shoot.png" id="6_7p43w"]
+[ext_resource type="Texture2D" uid="uid://df311dh1vdrg8" path="res://UI/ControllsSprites/Btn_Shoot_Pressed.png" id="7_vhckv"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7p43w"]
+diffuse_texture = ExtResource("6_7p43w")
+
+[node name="Controlls" type="CanvasLayer"]
+
+[node name="ControllsBackground" type="TextureRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.0
+offset_top = -160.0
+offset_right = 162.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("1_g7gq2")
+
+[node name="MovementButtons" type="HBoxContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -160.0
+offset_right = -162.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MoveRight" type="TouchScreenButton" parent="MovementButtons"]
+position = Vector2(80, 12.000007)
+scale = Vector2(3.1, 3.236842)
+texture_normal = ExtResource("2_61yv1")
+texture_pressed = ExtResource("3_ol5d2")
+passby_press = true
+action = "Derecha"
+
+[node name="MoveLeft" type="TouchScreenButton" parent="MovementButtons"]
+position = Vector2(12, 12)
+scale = Vector2(2.9999998, 3.236843)
+texture_normal = ExtResource("1_qmfda")
+texture_pressed = ExtResource("5_7p43w")
+passby_press = true
+action = "Izquierda"
+
+[node name="ShootButtons" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 128.0
+offset_right = 162.45526
+offset_bottom = 233.34558
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996628, 1.5279591)
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="ShootButtons"]
+position = Vector2(30.21, 17)
+scale = Vector2(3.05, 1.9992174)
+texture_normal = SubResource("CanvasTexture_7p43w")
+texture_pressed = ExtResource("7_vhckv")
+passby_press = true
+action = "Shoot"

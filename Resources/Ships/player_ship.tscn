@@ -97,7 +97,7 @@ animations = [{
 radius = 8.0
 height = 16.0
 
-[node name="PlayerShip" type="CharacterBody2D"]
+[node name="PlayerShip" type="CharacterBody2D" groups=["Players"]]
 motion_mode = 1
 script = ExtResource("1_pkijf")
 

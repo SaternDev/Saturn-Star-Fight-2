@@ -22,7 +22,7 @@ func _on_game_controller_hp_change(live) -> void:
 		health_img.texture = HEAL_BAR_SHIP_2
 	elif live == 1:
 		health_img.texture = HEAL_BAR_SHIP_3
-	else:
+	elif live == 0:
 		health_img.texture = HEAL_BAR_SHIP_4
 
 #Pause Button Pressed to pause the game
@@ -36,3 +36,7 @@ func _on_pause_button_down() -> void:
 		$GameUI/Pause.text = "Pause"
 		$GameUI/PausedMenu.visible = false
 		get_tree().paused = false
+
+func _on_starmenu_btn_button_down() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")

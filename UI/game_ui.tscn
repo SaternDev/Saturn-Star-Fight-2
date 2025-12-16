@@ -84,4 +84,12 @@ theme_override_colors/font_color = Color(0.99999994, 0.1943762, 0.14415282, 1)
 theme_override_font_sizes/font_size = 32
 text = "GameUI_lbl_Paused"
 
+[node name="StarmenuBtn" type="Button" parent="GameUI/PausedMenu"]
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.19607843, 0.14509805, 1)
+text = "Menu"
+flat = true
+
 [connection signal="button_down" from="GameUI/Pause" to="." method="_on_pause_button_down"]
+[connection signal="button_down" from="GameUI/PausedMenu/StarmenuBtn" to="." method="_on_starmenu_btn_button_down"]

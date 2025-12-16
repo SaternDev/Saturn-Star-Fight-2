@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://023j7hx0jj52"]
+[gd_scene load_steps=5 format=3 uid="uid://023j7hx0jj52"]
 
 [ext_resource type="Script" uid="uid://li5iu4rb6dpe" path="res://Scripts/GameUIScripts/shop.gd" id="1_35otv"]
-[ext_resource type="Texture2D" uid="uid://br1m4mue7e7qw" path="res://Sprites/ShipSprites/SpriteNave.png" id="1_ajbpu"]
 [ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="1_pogqh"]
+[ext_resource type="Texture2D" uid="uid://t33p26xtit3" path="res://Sprites/ShipSprites/SpriteNave_64px.png" id="2_74fni"]
+[ext_resource type="Texture2D" uid="uid://2qdc2wj8137j" path="res://Sprites/ShipSprites/Blastoin/Blastoin.png" id="4_74fni"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -18,28 +19,31 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 10.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.975973, 0.975973)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+[node name="FlowContainer" type="FlowContainer" parent="MarginContainer"]
 layout_mode = 2
-horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/ScrollContainer"]
-layout_mode = 2
-columns = 4
-
-[node name="BtnNormalSkinBuy" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+[node name="BtnNormalSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
 text = "Equipped"
-icon = ExtResource("1_ajbpu")
+icon = ExtResource("2_74fni")
 
-[node name="BtnPurpleSkinBuy" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+[node name="BtnPurpleSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
 text = "Equip"
 icon = ExtResource("1_pogqh")
 
-[node name="BtnPurpleSkinBuy3" type="Button" parent="MarginContainer/ScrollContainer/GridContainer"]
+[node name="BtnBlastoinSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
+layout_mode = 2
+text = "Equip"
+icon = ExtResource("4_74fni")
+
+[node name="BtnPurpleSkinBuy4" type="Button" parent="MarginContainer/FlowContainer"]
 visible = false
 layout_mode = 2
 text = "Buy"
@@ -53,6 +57,7 @@ offset_right = 66.0
 offset_bottom = 577.0
 text = "Options_btn_Back"
 
-[connection signal="button_down" from="MarginContainer/ScrollContainer/GridContainer/BtnNormalSkinBuy" to="." method="_on_btn_normal_skin_buy_button_down"]
-[connection signal="button_down" from="MarginContainer/ScrollContainer/GridContainer/BtnPurpleSkinBuy" to="." method="_on_btn_purple_skin_buy_button_down"]
+[connection signal="button_down" from="MarginContainer/FlowContainer/BtnNormalSkinBuy" to="." method="_on_btn_normal_skin_buy_button_down"]
+[connection signal="button_down" from="MarginContainer/FlowContainer/BtnPurpleSkinBuy" to="." method="_on_btn_purple_skin_buy_button_down"]
+[connection signal="button_down" from="MarginContainer/FlowContainer/BtnBlastoinSkinBuy" to="." method="_on_btn_blastoin_skin_buy_button_down"]
 [connection signal="button_down" from="AtrásBtn" to="." method="_on_atrás_btn_button_down"]

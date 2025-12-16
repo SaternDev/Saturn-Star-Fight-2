@@ -35,7 +35,7 @@ func _on_body_entered(body: Node) -> void:
 		animated_sprite_2d.play("Explosión")
 		gameController.PointsGained()
 		
-	if body is PlayerShip:
+	if body.is_in_group("Players"):
 		destroying = true
 		animated_sprite_2d.play("Explosión")
 		animated_sprite_2d.speed_scale = 3
