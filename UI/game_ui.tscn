@@ -32,6 +32,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="Difficultity" type="HBoxContainer" parent="GameUI"]
+visible = false
 layout_mode = 0
 offset_top = 32.0
 offset_right = 104.0
@@ -47,10 +48,9 @@ text = "0"
 
 [node name="Points" type="VBoxContainer" parent="GameUI"]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 59.0
-offset_right = 323.0
-offset_bottom = 88.0
+offset_top = 42.0
+offset_right = 144.0
+offset_bottom = 71.0
 
 [node name="PointsLabel" type="Label" parent="GameUI/Points"]
 layout_mode = 2

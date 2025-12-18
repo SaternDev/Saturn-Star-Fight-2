@@ -3,6 +3,7 @@ extends Control
 @onready var btn_buy_noraml: Button = $MarginContainer/FlowContainer/BtnNormalSkinBuy
 @onready var btn_buy_purple: Button = $MarginContainer/FlowContainer/BtnPurpleSkinBuy
 @onready var btn_buy_blastoin: Button = $MarginContainer/FlowContainer/BtnBlastoinSkinBuy
+@onready var btn_buy_horizonAtlas: Button = $MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy
 
 var ShopButtons:Array
 
@@ -10,7 +11,7 @@ var ShopButtons:Array
 func _ready() -> void:
 	
 	#Crea una lista con todos lso botones
-	ShopButtons = [$MarginContainer/FlowContainer/BtnNormalSkinBuy, $MarginContainer/FlowContainer/BtnPurpleSkinBuy, $MarginContainer/FlowContainer/BtnBlastoinSkinBuy]
+	ShopButtons = [$MarginContainer/FlowContainer/BtnNormalSkinBuy, $MarginContainer/FlowContainer/BtnPurpleSkinBuy, $MarginContainer/FlowContainer/BtnBlastoinSkinBuy, $MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy]
 	
 	if GlobalSave.game_data["skin_equipped"] == "Normal":
 		for button in ShopButtons:
@@ -28,6 +29,12 @@ func _ready() -> void:
 			button.text = "Equip"
 			
 		btn_buy_blastoin.text = "Equipped"
+		
+	elif GlobalSave.game_data["skin_equipped"] == "HorizonAtlas":
+		for button in ShopButtons:
+			button.text = "Equip"
+			
+		btn_buy_horizonAtlas.text = "Equipped"
 
 #Puts in the button if it Shows Equip, Equiped or Buy
 func _process(_delta: float) -> void:
@@ -57,6 +64,14 @@ func _on_btn_blastoin_skin_buy_button_down() -> void:
 			button.text = "Equip"
 		GlobalSave.game_data["skin_equipped"] = "Blastoin"
 		btn_buy_blastoin.text = "Equipped"
+		GlobalSave.save_game()
+
+func _on_btn_purple_skin_buy_4_button_down() -> void:
+	if btn_buy_horizonAtlas.text == "Equip":
+		for button in ShopButtons:
+			button.text = "Equip"
+		GlobalSave.game_data["skin_equipped"] = "HorizonAtlas"
+		btn_buy_horizonAtlas.text = "Equipped"
 		GlobalSave.save_game()
 
 func _on_atrás_btn_button_down() -> void:

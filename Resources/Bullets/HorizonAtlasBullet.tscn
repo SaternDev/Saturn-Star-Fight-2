@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnv054hwi7y17"]
+
+[ext_resource type="Script" uid="uid://dl32thlfcath8" path="res://Scripts/bullet.gd" id="1_k1ddp"]
+[ext_resource type="Texture2D" uid="uid://bsqq65jgcudc4" path="res://Sprites/ShipSprites/HorizonAtlas/Ammo_HorizonAtlas.png" id="2_k1ddp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v6hw"]
+atlas = ExtResource("2_k1ddp")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_as3rw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v6hw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hrawn"]
+radius = 15.307516
+height = 102.05011
+
+[node name="Bullet" type="RigidBody2D"]
+lock_rotation = true
+freeze = true
+script = ExtResource("1_k1ddp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9122501, 0.9122501)
+sprite_frames = SubResource("SpriteFrames_as3rw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.1920929e-07, -0.9999999)
+scale = Vector2(-0.3919643, -0.3919643)
+shape = SubResource("CapsuleShape2D_hrawn")

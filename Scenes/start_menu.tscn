@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
 [ext_resource type="AudioStream" uid="uid://bku5ldi1bxstp" path="res://Audio/MúsicaMenuInicial.mp3" id="2_jgtwh"]
-[ext_resource type="Texture2D" uid="uid://drq4dg77eogof" path="res://Imagenes/saturno_del_chino.png" id="3_626he"]
+[ext_resource type="Texture2D" uid="uid://bk6pbfgfyl7m0" path="res://Imagenes/MainMenuBackground.png" id="3_626he"]
 [ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
 [ext_resource type="PackedScene" uid="uid://023j7hx0jj52" path="res://UI/shop.tscn" id="4_a43kq"]
 
@@ -30,12 +30,6 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer/CenterContainer"]
 layout_mode = 2
-
-[node name="GameTitle" type="Label" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.6888266, 0.13857564, 0.6758372, 1)
-theme_override_font_sizes/font_size = 32
-text = "Saturn Star Fight"
 
 [node name="PlayBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
@@ -97,11 +91,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 756.0
+offset_bottom = 1344.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.29967767, 0.29967767)
 mouse_filter = 2
 texture = ExtResource("3_626he")
-expand_mode = 2
+expand_mode = 3
 
 [node name="OptionsMenu" type="Control" parent="."]
 visible = false

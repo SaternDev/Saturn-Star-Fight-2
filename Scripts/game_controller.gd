@@ -6,6 +6,7 @@ signal hpChange()
 #Ships to Spawn
 const PLAYER_SHIP = preload("uid://r0qel3o0n6l")
 const BLASTOIN = preload("uid://dh2fs70sp3hs5")
+const HORIZON_ATLAS = preload("uid://c4qdxawcvemip")
 
 @onready var player_spawn: Node2D = $"../PlayerSpawn"
 
@@ -29,12 +30,19 @@ func _ready() -> void:
 		var shipinstantiate = PLAYER_SHIP.instantiate()
 		shipinstantiate.position = player_spawn.position
 		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
+		
 	elif GlobalSave.game_data["skin_equipped"] == "Purple":
 		var shipinstantiate = PLAYER_SHIP.instantiate()
 		shipinstantiate.position = player_spawn.position
 		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
+		
 	elif GlobalSave.game_data["skin_equipped"] == "Blastoin":
 		var shipinstantiate = BLASTOIN.instantiate()
+		shipinstantiate.position = player_spawn.position
+		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
+		
+	elif GlobalSave.game_data["skin_equipped"] == "HorizonAtlas":
+		var shipinstantiate = HORIZON_ATLAS.instantiate()
 		shipinstantiate.position = player_spawn.position
 		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
 
