@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://du8jrp4avdx0o"]
+[gd_scene load_steps=4 format=3 uid="uid://du8jrp4avdx0o"]
 
 [ext_resource type="Script" uid="uid://bxxj8sryr4vu0" path="res://Scripts/GameUIScripts/game_ui.gd" id="1_kfjql"]
 [ext_resource type="Texture2D" uid="uid://csllpi5sn6o2x" path="res://Sprites/HealthBar/HealBarShip.png" id="1_mp46i"]
+[ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="3_h0rig"]
 
 [node name="game_ui" type="CanvasLayer"]
 process_mode = 3
@@ -48,13 +49,19 @@ text = "0"
 
 [node name="Points" type="VBoxContainer" parent="GameUI"]
 layout_mode = 0
-offset_top = 42.0
+offset_left = 6.0
+offset_top = 45.0
 offset_right = 144.0
-offset_bottom = 71.0
+offset_bottom = 85.0
 
 [node name="PointsLabel" type="Label" parent="GameUI/Points"]
 layout_mode = 2
-text = "GameUI_lbl_points"
+theme_override_colors/font_color = Color(0.2098163, 0.25635746, 0.83649105, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_h0rig")
+theme_override_font_sizes/font_size = 32
+text = "prueba"
 
 [node name="Pause" type="Button" parent="GameUI"]
 process_mode = 3

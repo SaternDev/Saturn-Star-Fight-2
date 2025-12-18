@@ -48,7 +48,7 @@ scale = Vector2(5.088887, 5.088887)
 frame_progress = 0.0
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
-position = Vector2(160, 389)
+position = Vector2(160, 382)
 
 [node name="MainLvlTheme" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(157, 236)

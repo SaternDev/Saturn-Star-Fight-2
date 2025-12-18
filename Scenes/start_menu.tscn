@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cx8ckmq68eirw"]
+[gd_scene load_steps=7 format=3 uid="uid://cx8ckmq68eirw"]
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
+[ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="2_8u0lp"]
 [ext_resource type="AudioStream" uid="uid://bku5ldi1bxstp" path="res://Audio/MúsicaMenuInicial.mp3" id="2_jgtwh"]
 [ext_resource type="Texture2D" uid="uid://bk6pbfgfyl7m0" path="res://Imagenes/MainMenuBackground.png" id="3_626he"]
 [ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
@@ -34,6 +35,8 @@ layout_mode = 2
 [node name="PlayBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
+theme_override_fonts/font = ExtResource("2_8u0lp")
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Play"
 flat = true
@@ -41,6 +44,8 @@ flat = true
 [node name="ShopBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
+theme_override_fonts/font = ExtResource("2_8u0lp")
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Shop"
 flat = true
@@ -48,6 +53,8 @@ flat = true
 [node name="OptionsBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
+theme_override_fonts/font = ExtResource("2_8u0lp")
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Options"
 flat = true
@@ -55,14 +62,22 @@ flat = true
 [node name="ExitBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8195984, 0, 0.22486502, 1)
+theme_override_colors/font_pressed_color = Color(0.6189329, 1.732707e-06, 3.85046e-07, 1)
+theme_override_fonts/font = ExtResource("2_8u0lp")
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Exit"
 flat = true
 
 [node name="TotalPointsLbl" type="Label" parent="StartMenu"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 152.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.21176471, 0.25490198, 0.8352941, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_8u0lp")
 text = "Menu_lbl_TotalPoints"
 
 [node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu"]

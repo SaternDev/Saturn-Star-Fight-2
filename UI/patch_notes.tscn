@@ -27,16 +27,20 @@ alignment = 1
 
 [node name="NotesLbl" type="Label" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Bugs Solucionados Alpha 0.7:
+text = "Bugs Solucionados Alpha 1:
 - Poder disparar mientras estallas
 - El idioma en opciones si lo cambiabas a ingles y volvías al menu, en el selector de idioma te aparecía como si estuviera en español pero estaba la traducción en inglés
 - Bug sigues \"vivo\" con la nave invisible al recibir dos meteoritos al estallar
 - En la tienda si indica la skin seleccionada y no tiene errores
 - Bug en la selección de idiomas, no indicaba nada cuando entrabas en móvil
 
-Nuevas Implementaciones de Alpha 0.7:
-- Nueva nave para seleccionar
-- Nuevo menú de Pausa"
+Nuevas Implementaciones de Alpha 1:
+- Nuevas naves para seleccionar
+- Nuevo menú de Pausa
+- Rework de la fuente de los puntos
+- Rework de los botones de movimiento
+- Cmabios en el funcionamiento de la UI de la tienda
+- Eliminación del mostrador de dificultad"
 autowrap_mode = 2
 
 [node name="TitleLbl" type="Label" parent="."]
