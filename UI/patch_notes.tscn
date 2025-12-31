@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cf3mkoxoyfy2x"]
+[gd_scene load_steps=2 format=3 uid="uid://cf3mkoxoyfy2x"]
+
+[ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="1_ikyb2"]
 
 [node name="PathcNotes" type="CanvasLayer"]
 
@@ -48,5 +50,6 @@ offset_left = 40.0
 offset_top = 108.0
 offset_right = 274.0
 offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_ikyb2")
 text = "Notes_lbl_PatchNotes"
 horizontal_alignment = 1

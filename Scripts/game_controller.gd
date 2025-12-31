@@ -25,8 +25,10 @@ func _ready() -> void:
 		return
 	if PLAYER_SHIP == null:
 		return
-	
-	if GlobalSave.game_data["skin_equipped"] == "Noraml":
+	if HORIZON_ATLAS == null:
+		return
+
+	if GlobalSave.game_data["skin_equipped"] == "Normal":
 		var shipinstantiate = PLAYER_SHIP.instantiate()
 		shipinstantiate.position = player_spawn.position
 		get_tree().current_scene.add_child.call_deferred(shipinstantiate)

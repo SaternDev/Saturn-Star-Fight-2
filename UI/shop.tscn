@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://023j7hx0jj52"]
+[gd_scene load_steps=7 format=3 uid="uid://023j7hx0jj52"]
 
 [ext_resource type="Script" uid="uid://li5iu4rb6dpe" path="res://Scripts/GameUIScripts/shop.gd" id="1_35otv"]
 [ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="1_pogqh"]
 [ext_resource type="Texture2D" uid="uid://t33p26xtit3" path="res://Sprites/ShipSprites/SpriteNave_64px.png" id="2_74fni"]
 [ext_resource type="Texture2D" uid="uid://2qdc2wj8137j" path="res://Sprites/ShipSprites/Blastoin/Blastoin.png" id="4_74fni"]
 [ext_resource type="Texture2D" uid="uid://dsk5xjickwfwp" path="res://Sprites/ShipSprites/HorizonAtlas/HorizonAtlas.png" id="5_del4s"]
+[ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="6_mwl7d"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -56,15 +57,19 @@ text = "Buy"
 icon = ExtResource("1_pogqh")
 
 [node name="AtrásBtn" type="Button" parent="."]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 546.0
-offset_right = 66.0
-offset_bottom = 577.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 126.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_mwl7d")
 text = "Options_btn_Back"
 
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnNormalSkinBuy" to="." method="_on_btn_normal_skin_buy_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnPurpleSkinBuy" to="." method="_on_btn_purple_skin_buy_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnBlastoinSkinBuy" to="." method="_on_btn_blastoin_skin_buy_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy" to="." method="_on_btn_purple_skin_buy_4_button_down"]
+[connection signal="button_down" from="MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy" to="." method="_on_btn_horizon_atlas_skin_buy_button_down"]
 [connection signal="button_down" from="AtrásBtn" to="." method="_on_atrás_btn_button_down"]

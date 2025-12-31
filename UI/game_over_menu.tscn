@@ -1,26 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://be7ro0xlmjd0h"]
 
 [ext_resource type="Script" uid="uid://loyf60om5jcl" path="res://Scripts/game_over_menu.gd" id="1_jobbv"]
-
-[sub_resource type="FontFile" id="FontFile_x1am1"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/48/0/ascent = 0.0
-cache/0/48/0/descent = 0.0
-cache/0/48/0/underline_position = 0.0
-cache/0/48/0/underline_thickness = 0.0
-cache/0/48/0/scale = 1.0
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
+[ext_resource type="FontFile" uid="uid://bi4mbonj4k2me" path="res://Fonts/ScoreFont/BoldPixels.ttf" id="2_3rckl"]
 
 [node name="GameOverMenu" type="CanvasLayer"]
 process_mode = 2
@@ -49,7 +30,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="GameoverLbl" type="Label" parent="GameOverUI/OverMenu"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("FontFile_x1am1")
+theme_override_fonts/font = ExtResource("2_3rckl")
 theme_override_font_sizes/font_size = 40
 text = "GameOverMenu_lbl_Title"
 horizontal_alignment = 1
@@ -58,12 +39,14 @@ vertical_alignment = 1
 [node name="PlayAgainBtn" type="Button" parent="GameOverUI/OverMenu"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.57254905, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("2_3rckl")
 text = "GameOverMenu_btn_Play"
 flat = true
 
 [node name="StartMenuBtn" type="Button" parent="GameOverUI/OverMenu"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.57254905, 0.99607843, 1)
+theme_override_fonts/font = ExtResource("2_3rckl")
 text = "Menu"
 flat = true
 
@@ -76,10 +59,13 @@ offset_bottom = 51.0
 
 [node name="MaxScoreLbl" type="Label" parent="GameOverUI/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3rckl")
 text = "GameOverMenu_lbl_MaxScore"
+horizontal_alignment = 1
 
 [node name="maxScore" type="Label" parent="GameOverUI/VBoxContainer2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3rckl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
