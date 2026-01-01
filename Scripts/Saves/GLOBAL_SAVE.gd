@@ -3,13 +3,14 @@ extends Node
 var save_path = "user://save_game.dat"
 
 var game_data : Dictionary = {
-	"total_points" = 0,
+	"total_points" = 10000,
 	"max_score" = 0,
 	"languaje" = "Spanish",
 	"skin_equipped" = "Normal",
 	"music_volumen" = 100,
 	"BlastoinBuyed" = false,
-	"HorizonAtlasBuyed" = false
+	"HorizonAtlasBuyed" = false,
+	"ChritmasBuyed" = false
 }
 
 func save_game() -> void:

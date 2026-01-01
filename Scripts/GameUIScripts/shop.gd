@@ -4,9 +4,11 @@ extends Control
 @onready var btn_buy_purple: Button = $MarginContainer/FlowContainer/BtnPurpleSkinBuy
 @onready var btn_buy_blastoin: Button = $MarginContainer/FlowContainer/BtnBlastoinSkinBuy
 @onready var btn_buy_horizonAtlas: Button = $MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy
+@onready var btn_buy_chritmas: Button = $MarginContainer/FlowContainer/BtnChritmasSkinBuy
 
 var blastoinPrice = 3000
 var horizonAtlasPrice = 1500
+var chritmasPrice = 1800
 var ShopButtons:Array
 
 #Set the actual equipped skin
@@ -23,8 +25,13 @@ func _process(_delta: float) -> void:
 	else:
 		btn_buy_horizonAtlas.text = "Equip"
 	
+	if not GlobalSave.game_data["ChritmasBuyed"]:
+		btn_buy_chritmas.text = "Buy: " + str(chritmasPrice)
+	else:
+		btn_buy_chritmas.text = "Equip"
+	
 	#Crea una lista con todos lso botones
-	ShopButtons = [$MarginContainer/FlowContainer/BtnNormalSkinBuy, $MarginContainer/FlowContainer/BtnPurpleSkinBuy, $MarginContainer/FlowContainer/BtnBlastoinSkinBuy, $MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy]
+	ShopButtons = [$MarginContainer/FlowContainer/BtnNormalSkinBuy, $MarginContainer/FlowContainer/BtnPurpleSkinBuy, $MarginContainer/FlowContainer/BtnBlastoinSkinBuy, $MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy, $MarginContainer/FlowContainer/BtnChritmasSkinBuy]
 	
 	if GlobalSave.game_data["skin_equipped"] == "Normal":
 		for button in ShopButtons:
@@ -53,6 +60,13 @@ func _process(_delta: float) -> void:
 				button.text = "Equip"
 			
 		btn_buy_horizonAtlas.text = "Equipped"
+	
+	elif GlobalSave.game_data["skin_equipped"] == "Chritmas":
+		for button in ShopButtons:
+			if button.text == "Equipped":
+				button.text = "Equip"
+			
+		btn_buy_chritmas.text = "Equipped"
 
 #Equips the Normal skin if you press the button
 func _on_btn_normal_skin_buy_button_down() -> void:
@@ -104,6 +118,22 @@ func _on_btn_horizon_atlas_skin_buy_button_down() -> void:
 			GlobalSave.game_data["total_points"] -= horizonAtlasPrice
 			GlobalSave.game_data["HorizonAtlasBuyed"] = true
 			btn_buy_horizonAtlas.text = "Equip"
+		GlobalSave.save_game()
+
+func _on_btn_chritmas_skin_buy_button_down() -> void:
+	if GlobalSave.game_data["ChritmasBuyed"]:
+		if btn_buy_chritmas.text == "Equip":
+			for button in ShopButtons:
+				if button.text == "Equipped":
+						button.text = "Equip"
+			GlobalSave.game_data["skin_equipped"] = "Chritmas"
+			btn_buy_chritmas.text = "Equipped"
+			GlobalSave.save_game()
+	else:
+		if GlobalSave.game_data["total_points"] >= chritmasPrice:
+			GlobalSave.game_data["total_points"] -= chritmasPrice
+			GlobalSave.game_data["ChritmasBuyed"] = true
+			btn_buy_chritmas.text = "Equip"
 		GlobalSave.save_game()
 
 func _on_atrás_btn_button_down() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://023j7hx0jj52"]
+[gd_scene load_steps=9 format=3 uid="uid://023j7hx0jj52"]
 
 [ext_resource type="Script" uid="uid://li5iu4rb6dpe" path="res://Scripts/GameUIScripts/shop.gd" id="1_35otv"]
 [ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="1_pogqh"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cafx2hypcawt5" path="res://Sprites/ShipSprites/SpriteNavePurple_64px.png" id="3_l3qkl"]
 [ext_resource type="Texture2D" uid="uid://dqcw5t05wrosp" path="res://Sprites/ShipSprites/Blastoin/BlastoinShop.png" id="4_mwl7d"]
 [ext_resource type="Texture2D" uid="uid://cj5cj3v5f356n" path="res://Sprites/ShipSprites/HorizonAtlas/HorizonAtlasShop.png" id="5_l3qkl"]
+[ext_resource type="Texture2D" uid="uid://bjhmmyrhsqmpl" path="res://Sprites/ShipSprites/Chritmas/ChritmasShop.png" id="6_2k6ie"]
 [ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="6_mwl7d"]
 
 [node name="Shop" type="Control"]
@@ -52,6 +53,11 @@ layout_mode = 2
 text = "Equip"
 icon = ExtResource("5_l3qkl")
 
+[node name="BtnChritmasSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
+layout_mode = 2
+text = "Equip"
+icon = ExtResource("6_2k6ie")
+
 [node name="BtnPurpleSkinBuy5" type="Button" parent="MarginContainer/FlowContainer"]
 visible = false
 layout_mode = 2
@@ -72,6 +78,6 @@ text = "Options_btn_Back"
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnNormalSkinBuy" to="." method="_on_btn_normal_skin_buy_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnPurpleSkinBuy" to="." method="_on_btn_purple_skin_buy_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnBlastoinSkinBuy" to="." method="_on_btn_blastoin_skin_buy_button_down"]
-[connection signal="button_down" from="MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy" to="." method="_on_btn_purple_skin_buy_4_button_down"]
 [connection signal="button_down" from="MarginContainer/FlowContainer/BtnHorizonAtlasSkinBuy" to="." method="_on_btn_horizon_atlas_skin_buy_button_down"]
+[connection signal="button_down" from="MarginContainer/FlowContainer/BtnChritmasSkinBuy" to="." method="_on_btn_chritmas_skin_buy_button_down"]
 [connection signal="button_down" from="AtrásBtn" to="." method="_on_atrás_btn_button_down"]

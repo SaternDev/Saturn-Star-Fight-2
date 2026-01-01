@@ -5,8 +5,9 @@ signal hpChange()
 
 #Ships to Spawn
 const PLAYER_SHIP = preload("uid://r0qel3o0n6l")
-const BLASTOIN = preload("uid://dh2fs70sp3hs5")
+const BLASTOIN = preload("uid://sd0vwe857b1b")
 const HORIZON_ATLAS = preload("uid://c4qdxawcvemip")
+const CHRITMAS = preload("res://Resources/Ships/Chritmas.tscn")
 
 @onready var player_spawn: Node2D = $"../PlayerSpawn"
 
@@ -27,6 +28,8 @@ func _ready() -> void:
 		return
 	if HORIZON_ATLAS == null:
 		return
+	if CHRITMAS == null:
+		return
 
 	if GlobalSave.game_data["skin_equipped"] == "Normal":
 		var shipinstantiate = PLAYER_SHIP.instantiate()
@@ -45,6 +48,11 @@ func _ready() -> void:
 		
 	elif GlobalSave.game_data["skin_equipped"] == "HorizonAtlas":
 		var shipinstantiate = HORIZON_ATLAS.instantiate()
+		shipinstantiate.position = player_spawn.position
+		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
+		
+	elif GlobalSave.game_data["skin_equipped"] == "Chritmas":
+		var shipinstantiate = CHRITMAS.instantiate()
 		shipinstantiate.position = player_spawn.position
 		get_tree().current_scene.add_child.call_deferred(shipinstantiate)
 
