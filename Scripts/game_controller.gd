@@ -21,9 +21,9 @@ const GAME_OVER_MENU = preload("uid://be7ro0xlmjd0h")
 var ship:CharacterBody2D
 
 func _ready() -> void:
-	if BLASTOIN == null:
-		return
 	if PLAYER_SHIP == null:
+		return
+	if BLASTOIN == null:
 		return
 	if HORIZON_ATLAS == null:
 		return

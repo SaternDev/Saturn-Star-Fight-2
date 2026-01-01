@@ -60,7 +60,7 @@ func _on_btn_normal_skin_buy_button_down() -> void:
 		for button in ShopButtons:
 			if button.text == "Equipped":
 				button.text = "Equip"
-		GlobalSave.game_data["skin_equipped"] = "Noraml"
+		GlobalSave.game_data["skin_equipped"] = "Normal"
 		btn_buy_noraml.text = "Equipped"
 	GlobalSave.save_game()
 
