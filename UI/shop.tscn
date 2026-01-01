@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://023j7hx0jj52"]
+[gd_scene load_steps=8 format=3 uid="uid://023j7hx0jj52"]
 
 [ext_resource type="Script" uid="uid://li5iu4rb6dpe" path="res://Scripts/GameUIScripts/shop.gd" id="1_35otv"]
 [ext_resource type="Texture2D" uid="uid://bdbn6jm3d60tm" path="res://Sprites/RecolorShip_Purple.png" id="1_pogqh"]
 [ext_resource type="Texture2D" uid="uid://t33p26xtit3" path="res://Sprites/ShipSprites/SpriteNave_64px.png" id="2_74fni"]
-[ext_resource type="Texture2D" uid="uid://2qdc2wj8137j" path="res://Sprites/ShipSprites/Blastoin/Blastoin.png" id="4_74fni"]
-[ext_resource type="Texture2D" uid="uid://dsk5xjickwfwp" path="res://Sprites/ShipSprites/HorizonAtlas/HorizonAtlas.png" id="5_del4s"]
+[ext_resource type="Texture2D" uid="uid://cafx2hypcawt5" path="res://Sprites/ShipSprites/SpriteNavePurple_64px.png" id="3_l3qkl"]
+[ext_resource type="Texture2D" uid="uid://dqcw5t05wrosp" path="res://Sprites/ShipSprites/Blastoin/BlastoinShop.png" id="4_mwl7d"]
+[ext_resource type="Texture2D" uid="uid://cj5cj3v5f356n" path="res://Sprites/ShipSprites/HorizonAtlas/HorizonAtlasShop.png" id="5_l3qkl"]
 [ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="6_mwl7d"]
 
 [node name="Shop" type="Control"]
@@ -29,6 +30,7 @@ scale = Vector2(0.975973, 0.975973)
 
 [node name="FlowContainer" type="FlowContainer" parent="MarginContainer"]
 layout_mode = 2
+alignment = 1
 
 [node name="BtnNormalSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
@@ -38,17 +40,17 @@ icon = ExtResource("2_74fni")
 [node name="BtnPurpleSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
 text = "Equip"
-icon = ExtResource("1_pogqh")
+icon = ExtResource("3_l3qkl")
 
 [node name="BtnBlastoinSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
 text = "Equip"
-icon = ExtResource("4_74fni")
+icon = ExtResource("4_mwl7d")
 
 [node name="BtnHorizonAtlasSkinBuy" type="Button" parent="MarginContainer/FlowContainer"]
 layout_mode = 2
 text = "Equip"
-icon = ExtResource("5_del4s")
+icon = ExtResource("5_l3qkl")
 
 [node name="BtnPurpleSkinBuy5" type="Button" parent="MarginContainer/FlowContainer"]
 visible = false
