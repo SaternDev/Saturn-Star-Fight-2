@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv3ayibh8rgu0"]
+[gd_scene format=3 uid="uid://bv3ayibh8rgu0"]
 
 [ext_resource type="Script" uid="uid://beksrhjf835kf" path="res://Scripts/game_controller.gd" id="4_o15vh"]
 [ext_resource type="PackedScene" uid="uid://du8jrp4avdx0o" path="res://UI/game_ui.tscn" id="5_2a20n"]
@@ -10,54 +10,54 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o15vh"]
 size = Vector2(20, 110)
 
-[node name="MainLevel" type="Node2D"]
+[node name="MainLevel" type="Node2D" unique_id=1220156515]
 
-[node name="GameController" type="Node2D" parent="."]
+[node name="GameController" type="Node2D" parent="." unique_id=668034128]
 script = ExtResource("4_o15vh")
 
-[node name="DificultyIncreaser" type="Timer" parent="GameController"]
+[node name="DificultyIncreaser" type="Timer" parent="GameController" unique_id=344182775]
 wait_time = 15.0
 one_shot = true
 autostart = true
 
-[node name="game_ui" parent="." instance=ExtResource("5_2a20n")]
+[node name="game_ui" parent="." unique_id=193597506 instance=ExtResource("5_2a20n")]
 
-[node name="MeteorSpawner" parent="." instance=ExtResource("5_ymtjv")]
+[node name="MeteorSpawner" parent="." unique_id=674383752 instance=ExtResource("5_ymtjv")]
 position = Vector2(0, -65)
 
-[node name="Limits" type="Node2D" parent="."]
+[node name="Limits" type="Node2D" parent="." unique_id=393238903]
 
-[node name="Limits" type="StaticBody2D" parent="Limits"]
+[node name="Limits" type="StaticBody2D" parent="Limits" unique_id=620466683]
 position = Vector2(-10, 382)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Limits"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Limits" unique_id=737097133]
 position = Vector2(4, 1)
 shape = SubResource("RectangleShape2D_o15vh")
 
-[node name="Limits2" type="StaticBody2D" parent="Limits"]
+[node name="Limits2" type="StaticBody2D" parent="Limits" unique_id=409915525]
 position = Vector2(334, 382)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Limits2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limits/Limits2" unique_id=406787296]
 position = Vector2(-4, 1)
 shape = SubResource("RectangleShape2D_o15vh")
 
-[node name="BackgroundLvl1" parent="." instance=ExtResource("6_2a20n")]
+[node name="BackgroundLvl1" parent="." unique_id=1469995609 instance=ExtResource("6_2a20n")]
 show_behind_parent = true
 position = Vector2(161, 288)
 scale = Vector2(5.088887, 5.088887)
 frame_progress = 0.0
 
-[node name="PlayerSpawn" type="Node2D" parent="."]
+[node name="PlayerSpawn" type="Node2D" parent="." unique_id=1107955847]
 position = Vector2(160, 382)
 
-[node name="MainLvlTheme" type="AudioStreamPlayer2D" parent="."]
+[node name="MainLvlTheme" type="AudioStreamPlayer2D" parent="." unique_id=64411713]
 position = Vector2(157, 236)
 stream = ExtResource("6_0e82a")
 volume_db = -10.0
 autoplay = true
 parameters/looping = true
 
-[node name="Controlls" parent="." instance=ExtResource("6_s1b4b")]
+[node name="Controlls" parent="." unique_id=173782914 instance=ExtResource("6_s1b4b")]
 
 [connection signal="difficultChange" from="GameController" to="MeteorSpawner" method="_on_game_controller_difficult_change"]
 [connection signal="hpChange" from="GameController" to="game_ui" method="_on_game_controller_hp_change"]

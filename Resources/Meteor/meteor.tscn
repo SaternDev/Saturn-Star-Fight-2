@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfsl4rlftabix"]
+[gd_scene format=3 uid="uid://dfsl4rlftabix"]
 
 [ext_resource type="Texture2D" uid="uid://cushlpntmcuae" path="res://Sprites/Meteorito.png" id="1_4hssa"]
 [ext_resource type="Script" uid="uid://bp7dpfw85ir8m" path="res://Scripts/meteor.gd" id="1_vs5h4"]
@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fje7r")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Explosión",
 "speed": 8.0
 }, {
@@ -43,7 +43,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_4hssa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 5.0
 }]
@@ -51,7 +51,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4hssa"]
 radius = 12.0415945
 
-[node name="Meteorito" type="RigidBody2D"]
+[node name="Meteorito" type="RigidBody2D" unique_id=785149271]
 top_level = true
 collision_layer = 4
 collision_mask = 3
@@ -62,12 +62,12 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_vs5h4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=910415398]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1kxlv")
 animation = &"Explosión"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=602570823]
 light_mask = 0
 position = Vector2(2, 4)
 shape = SubResource("CircleShape2D_4hssa")
