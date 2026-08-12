@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cx8ckmq68eirw"]
+[gd_scene format=3 uid="uid://cx8ckmq68eirw"]
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
 [ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="2_8u0lp"]
@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
 [ext_resource type="PackedScene" uid="uid://023j7hx0jj52" path="res://UI/shop.tscn" id="4_a43kq"]
 
-[node name="StartMenu" type="CanvasLayer"]
+[node name="StartMenu" type="CanvasLayer" unique_id=773810828]
 script = ExtResource("1_juhg0")
 
-[node name="StartMenu" type="Control" parent="."]
+[node name="StartMenu" type="Control" parent="." unique_id=160329671]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu" unique_id=1418623984]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,13 +26,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="StartMenu/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="StartMenu/MarginContainer" unique_id=2138058429]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer/CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="StartMenu/MarginContainer/CenterContainer" unique_id=1423044192]
 layout_mode = 2
 
-[node name="PlayBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="PlayBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=1629927034]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
@@ -41,7 +41,7 @@ theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Play"
 flat = true
 
-[node name="ShopBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="ShopBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=2139477864]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
@@ -50,7 +50,7 @@ theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Shop"
 flat = true
 
-[node name="OptionsBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="OptionsBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=1870171360]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
 theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
@@ -59,7 +59,7 @@ theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Options"
 flat = true
 
-[node name="ExitBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer"]
+[node name="ExitBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=1628340024]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8195984, 0, 0.22486502, 1)
 theme_override_colors/font_pressed_color = Color(0.6189329, 1.732707e-06, 3.85046e-07, 1)
@@ -68,7 +68,7 @@ theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Exit"
 flat = true
 
-[node name="TotalPointsLbl" type="Label" parent="StartMenu"]
+[node name="TotalPointsLbl" type="Label" parent="StartMenu" unique_id=1045859928]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
@@ -80,13 +80,13 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_8u0lp")
 text = "Menu_lbl_TotalPoints"
 
-[node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu"]
+[node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu" unique_id=681622935]
 stream = ExtResource("2_jgtwh")
 volume_db = -12.429
 autoplay = true
 mix_target = 2
 
-[node name="PatchNotes" type="Button" parent="StartMenu"]
+[node name="PatchNotes" type="Button" parent="StartMenu" unique_id=1617671100]
 visible = false
 layout_mode = 1
 anchors_preset = 3
@@ -101,7 +101,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_8u0lp")
 text = "Menu_btn_Notes"
 
-[node name="TextureRect" type="TextureRect" parent="StartMenu"]
+[node name="TextureRect" type="TextureRect" parent="StartMenu" unique_id=1424493264]
 show_behind_parent = true
 z_index = -10
 layout_mode = 1
@@ -117,7 +117,7 @@ mouse_filter = 2
 texture = ExtResource("3_626he")
 expand_mode = 3
 
-[node name="OptionsMenu" type="Control" parent="."]
+[node name="OptionsMenu" type="Control" parent="." unique_id=695210535]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -126,7 +126,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsLabel" type="Label" parent="OptionsMenu"]
+[node name="OptionsLabel" type="Label" parent="OptionsMenu" unique_id=1865820580]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.56790125
@@ -140,7 +140,7 @@ theme_override_font_sizes/font_size = 28
 text = "option_lbl_Title"
 metadata/_edit_use_anchors_ = true
 
-[node name="Options" type="CenterContainer" parent="OptionsMenu"]
+[node name="Options" type="CenterContainer" parent="OptionsMenu" unique_id=292960145]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,25 +154,25 @@ offset_bottom = 219.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/Options"]
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionsMenu/Options" unique_id=749060490]
 layout_mode = 2
 
-[node name="Opciones" type="VBoxContainer" parent="OptionsMenu/Options/HBoxContainer"]
+[node name="Opciones" type="VBoxContainer" parent="OptionsMenu/Options/HBoxContainer" unique_id=1405861742]
 layout_mode = 2
 
-[node name="IdiomaLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
+[node name="IdiomaLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones" unique_id=984459373]
 layout_mode = 2
 text = "Options_lbl_Idiom"
 
-[node name="ControlesLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones"]
+[node name="ControlesLbl" type="Label" parent="OptionsMenu/Options/HBoxContainer/Opciones" unique_id=701617125]
 visible = false
 layout_mode = 2
 text = "Controls: "
 
-[node name="Elecciones" type="VBoxContainer" parent="OptionsMenu/Options/HBoxContainer"]
+[node name="Elecciones" type="VBoxContainer" parent="OptionsMenu/Options/HBoxContainer" unique_id=1672238248]
 layout_mode = 2
 
-[node name="IdiomaOpBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones"]
+[node name="IdiomaOpBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones" unique_id=420918102]
 layout_mode = 2
 item_count = 2
 popup/item_0/text = "Español"
@@ -180,7 +180,7 @@ popup/item_0/id = 0
 popup/item_1/text = "English"
 popup/item_1/id = 1
 
-[node name="ControlesBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones"]
+[node name="ControlesBtn" type="OptionButton" parent="OptionsMenu/Options/HBoxContainer/Elecciones" unique_id=2063012584]
 visible = false
 layout_mode = 2
 selected = 0
@@ -190,7 +190,7 @@ popup/item_0/id = 0
 popup/item_1/text = "DragPantalla"
 popup/item_1/id = 1
 
-[node name="AtrásBtn" type="Button" parent="OptionsMenu"]
+[node name="AtrásBtn" type="Button" parent="OptionsMenu" unique_id=1591156951]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 546.0
@@ -198,10 +198,10 @@ offset_right = 66.0
 offset_bottom = 577.0
 text = "Options_btn_Back"
 
-[node name="PathcNotes" parent="." instance=ExtResource("3_m6uer")]
+[node name="PathcNotes" parent="." unique_id=217081929 instance=ExtResource("3_m6uer")]
 visible = false
 
-[node name="Shop" parent="." instance=ExtResource("4_a43kq")]
+[node name="Shop" parent="." unique_id=69139210 instance=ExtResource("4_a43kq")]
 visible = false
 
 [connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
