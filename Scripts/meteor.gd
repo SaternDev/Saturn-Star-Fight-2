@@ -7,26 +7,25 @@ extends RigidBody2D
 
 var destroying = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animated_sprite_2d.play("Idle")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var speed = get_parent().MeteorSpeed
-	
+# Se usa _physics_process para manejar elementos físicos como RigidBody2D
+func _physics_process(_delta: float) -> void:
+	# Si sobrepasa la pantalla, se elimina
 	if position.y > 650:
 		queue_free()
 	
-	#Handle Meteor Movement
+	# Manejo del movimiento mediante físicas
 	if not destroying:
-		position.y += delta * speed
+		var speed = get_parent().MeteorSpeed
+		linear_velocity.y = speed
+	else:
+		linear_velocity = Vector2.ZERO
 	
-	#Waits untill the animation of destroying stops and delets de nodedad
+	# Espera a que termine la animación de destrucción para borrar el nodo
 	if not animated_sprite_2d.is_playing() and destroying:
 		queue_free()
-
 
 func _on_body_entered(body: Node) -> void:
 	if body is Bullet and not destroying:
@@ -36,8 +35,8 @@ func _on_body_entered(body: Node) -> void:
 		gameController.PointsGained()
 		
 	if body.is_in_group("Players"):
-		if not destroying: body.playerHit()
+		if not destroying: 
+			body.playerHit()
 		destroying = true
 		animated_sprite_2d.play("Explosión")
 		animated_sprite_2d.speed_scale = 3
-		

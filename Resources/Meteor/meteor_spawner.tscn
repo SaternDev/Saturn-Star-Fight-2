@@ -1,17 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsjogu5ckvuhv"]
+[gd_scene format=3 uid="uid://bsjogu5ckvuhv"]
 
 [ext_resource type="Script" uid="uid://rtr26h3x86mm" path="res://Scripts/meteor_spawner.gd" id="1_eu8d7"]
 
-[node name="MeteorSpawner" type="Node2D"]
+[node name="MeteorSpawner" type="Node2D" unique_id=1064582951]
 script = ExtResource("1_eu8d7")
 
-[node name="Position1" type="Node2D" parent="."]
+[node name="Position1" type="Node2D" parent="." unique_id=235047678]
 position = Vector2(23, 0)
 
-[node name="Position2" type="Node2D" parent="."]
+[node name="Position2" type="Node2D" parent="." unique_id=1476087594]
 position = Vector2(306, 0)
 
-[node name="WaitingSpawn" type="Timer" parent="."]
+[node name="WaitingSpawn" type="Timer" parent="." unique_id=888568831]
 wait_time = 3.0
 one_shot = true
 autostart = true
