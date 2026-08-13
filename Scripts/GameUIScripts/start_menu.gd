@@ -24,6 +24,7 @@ func _on_user_authenticated(is_authenticated: bool) -> void:
 		if has_node("PlayGamesLeaderboardsClient"):
 			$PlayGamesLeaderboardsClient.submit_score("CgkIsK7QhPMZEAIQAQ", int(GlobalSave.game_data["max_score"]))
 	else:
+		get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")
 		print("❌ Error: Usuario no autenticado en Google Play Games.")
 
 func _process(_delta: float) -> void:
