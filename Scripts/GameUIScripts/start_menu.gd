@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var controls: int
-var is_user_logged_in: bool = false
 
 func _ready() -> void:
 	# 1. Cargar la partida guardada
@@ -19,8 +18,6 @@ func _ready() -> void:
 		$PlayGamesSignInClient.sign_in()
 
 func _on_user_authenticated(is_authenticated: bool) -> void:
-	is_user_logged_in = is_authenticated
-	
 	if is_authenticated:
 		print("✅ Usuario autenticado en Google Play Games.")
 		# Enviar la puntuación máxima una vez confirmado el inicio de sesión
@@ -79,17 +76,8 @@ func _on_shop_btn_button_down() -> void:
 
 func _on_score_btn_button_down() -> void:
 	print("--- BOTÓN PULSADO ---")
-	
-	# Verificar si el usuario se autenticó
-	if not is_user_logged_in:
-		print("⚠️ El usuario NO ha iniciado sesión en Google Play Games aún. Reintentando sign_in...")
-		if has_node("PlayGamesSignInClient"):
-			$PlayGamesSignInClient.sign_in()
-		return
-
-	# Si está autenticado, intentar mostrar la tabla de clasificación
 	if has_node("PlayGamesLeaderboardsClient"):
-		print("Abriendo la tabla de clasificación...")
+		# Prueba pasándole el ID de tu tabla:
 		$PlayGamesLeaderboardsClient.show_leaderboard("CgkIsK7QhPMZEAIQAQ")
-	else:
-		print("❌ No se encontró el nodo PlayGamesLeaderboardsClient en esta escena.")
+		# O si usas show_all_leaderboards:
+		# $PlayGamesLeaderboardsClient.show_all_leaderboards()

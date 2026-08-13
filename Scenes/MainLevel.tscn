@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://bj4uaatls71b4" path="res://Audio/Músic/MainLvlTheme.mp3" id="6_0e82a"]
 [ext_resource type="PackedScene" uid="uid://dimap0gk50h0c" path="res://Resources/Backgrounds/BackgroundLvl1.tscn" id="6_2a20n"]
 [ext_resource type="PackedScene" uid="uid://ddjijeijebnsb" path="res://UI/NewControlls.tscn" id="6_s1b4b"]
-[ext_resource type="Script" uid="uid://decufg0g864rg" path="res://addons/GodotPlayGameServices/scripts/leaderboards/leaderboards_client.gd" id="7_0e82a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o15vh"]
 size = Vector2(20, 110)
@@ -59,10 +58,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="Controlls" parent="." unique_id=173782914 instance=ExtResource("6_s1b4b")]
-
-[node name="PlayGamesLeaderboardsClient" type="Node" parent="." unique_id=905475258]
-script = ExtResource("7_0e82a")
-metadata/_custom_type_script = "uid://decufg0g864rg"
 
 [connection signal="difficultChange" from="GameController" to="MeteorSpawner" method="_on_game_controller_difficult_change"]
 [connection signal="hpChange" from="GameController" to="game_ui" method="_on_game_controller_hp_change"]
