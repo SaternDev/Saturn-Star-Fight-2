@@ -26,6 +26,7 @@ boot_splash/minimum_display_time=3000
 
 GlobalSave="*res://Scripts/Saves/GLOBAL_SAVE.gd"
 PlayServicesManager="*uid://dxbgyu8pw10mc"
+GodotPlayGameServices="*uid://b062ngq6v2a2w"
 
 [display]
 

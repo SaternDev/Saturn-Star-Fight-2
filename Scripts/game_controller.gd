@@ -77,8 +77,8 @@ func PointsGained():
 func playerLifes():
 	if GlobalSave.game_data["max_score"] < points:
 		GlobalSave.game_data["max_score"] = points
-		$"../PlayGamesLeaderboardsClient".submitScore("CgkIsK7QhPMZEAIQAQ", points)
 	if live < 1 and ship.animationEnded:
+		$"../PlayGamesLeaderboardsClient".submit_score("CgkIsK7QhPMZEAIQAQ", int(points))
 		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
 		
 		$"../game_ui".visible = false
