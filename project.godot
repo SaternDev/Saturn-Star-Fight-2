@@ -25,6 +25,7 @@ boot_splash/minimum_display_time=3000
 [autoload]
 
 GlobalSave="*res://Scripts/Saves/GLOBAL_SAVE.gd"
+PlayServicesManager="*uid://dxbgyu8pw10mc"
 
 [display]
 
@@ -36,6 +37,10 @@ window/handheld/orientation=1
 [dotnet]
 
 project/assembly_name="Saturn Star Fight"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg")
 
 [global_group]
 

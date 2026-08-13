@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bk6pbfgfyl7m0" path="res://Imagenes/MainMenuBackground.png" id="3_626he"]
 [ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
 [ext_resource type="PackedScene" uid="uid://023j7hx0jj52" path="res://UI/shop.tscn" id="4_a43kq"]
+[ext_resource type="Script" uid="uid://decufg0g864rg" path="res://addons/GodotPlayGameServices/scripts/leaderboards/leaderboards_client.gd" id="7_lfskg"]
+[ext_resource type="Script" uid="uid://bp3aojushfo" path="res://addons/GodotPlayGameServices/scripts/sign_in/sign_in_client.gd" id="8_ru7em"]
 
 [node name="StartMenu" type="CanvasLayer" unique_id=773810828]
 script = ExtResource("1_juhg0")
@@ -57,6 +59,15 @@ theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293
 theme_override_fonts/font = ExtResource("2_8u0lp")
 theme_override_font_sizes/font_size = 22
 text = "Menu_btn_Options"
+flat = true
+
+[node name="ScoreBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=928315432]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4346237, 0.58292305, 0.9356031, 1)
+theme_override_colors/font_pressed_color = Color(0.1469999, 0.2700122, 0.6167293, 1)
+theme_override_fonts/font = ExtResource("2_8u0lp")
+theme_override_font_sizes/font_size = 22
+text = "Scoreboard"
 flat = true
 
 [node name="ExitBtn" type="Button" parent="StartMenu/MarginContainer/CenterContainer/VBoxContainer" unique_id=1628340024]
@@ -204,9 +215,18 @@ visible = false
 [node name="Shop" parent="." unique_id=69139210 instance=ExtResource("4_a43kq")]
 visible = false
 
+[node name="PlayGamesLeaderboardsClient" type="Node" parent="." unique_id=516994372]
+script = ExtResource("7_lfskg")
+metadata/_custom_type_script = "uid://decufg0g864rg"
+
+[node name="PlayGamesSignInClient" type="Node" parent="." unique_id=1773720878]
+script = ExtResource("8_ru7em")
+metadata/_custom_type_script = "uid://bp3aojushfo"
+
 [connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/PlayBtn" to="." method="_on_play_btn_button_down"]
 [connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/ShopBtn" to="." method="_on_shop_btn_button_down"]
 [connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/OptionsBtn" to="." method="_on_options_btn_button_down"]
+[connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/ScoreBtn" to="." method="_on_score_btn_button_down"]
 [connection signal="button_down" from="StartMenu/MarginContainer/CenterContainer/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_button_down"]
 [connection signal="button_down" from="StartMenu/PatchNotes" to="." method="_on_patch_notes_button_down"]
 [connection signal="item_selected" from="OptionsMenu/Options/HBoxContainer/Elecciones/IdiomaOpBtn" to="." method="_on_idioma_op_btn_item_selected"]

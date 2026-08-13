@@ -4,6 +4,8 @@ var controls:int
 
 func _ready() -> void:
 	GlobalSave.load_game()
+	$PlayGamesLeaderboardsClient.submitScore("CgkIsK7QhPMZEAIQAQ", GlobalSave.game_data["max_score"])
+	$PlayGamesSignInClient.sign_in()
 
 func _process(_delta: float) -> void:
 	if $OptionsMenu.visible:
@@ -57,3 +59,7 @@ func _on_patch_notes_button_down() -> void:
 func _on_shop_btn_button_down() -> void:
 	$Shop.visible = true
 	$StartMenu.visible = false
+
+
+func _on_score_btn_button_down() -> void:
+	$PlayGamesLeaderboardsClient.show_all_leaderboards()
