@@ -63,7 +63,8 @@ autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79911458]
 position = Vector2(0, 5)
+scale = Vector2(0.83999884, 0.83999884)
 shape = SubResource("CircleShape2D_lj5r4")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]

@@ -1,5 +1,5 @@
 class_name Bullet
-extends RigidBody2D
+extends Area2D
 
 
 @export var speed = 300.0
@@ -13,3 +13,9 @@ func _process(delta: float) -> void:
 
 func Destroy():
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is Meteor:
+		Destroy()
+		body.destroy()

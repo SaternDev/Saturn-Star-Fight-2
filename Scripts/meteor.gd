@@ -30,13 +30,12 @@ func _physics_process(_delta: float) -> void:
 	if not animated_sprite_2d.is_playing() and destroying:
 		queue_free()
 
+func destroy():
+	destroying = true
+	animated_sprite_2d.play("Explosión")
+	gameController.PointsGained(pointsGain)
+
 func _on_body_entered(body: Node) -> void:
-	if body is Bullet and not destroying:
-		body.Destroy()
-		destroying = true
-		animated_sprite_2d.play("Explosión")
-		gameController.PointsGained(pointsGain)
-	
 	if body.is_in_group("Players"):
 		if not destroying: 
 			body.playerHit()
