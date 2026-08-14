@@ -23,6 +23,14 @@ func save_game() -> void:
 func load_game() -> void:
 	if FileAccess.file_exists(save_path):
 		var save_file = FileAccess.open(save_path, FileAccess.READ)
-		
-		game_data = save_file.get_var()
-		save_file = null
+		if save_file:
+			var loaded_data = save_file.get_var()
+			save_file = null # Cerramos el archivo
+			
+			if loaded_data is Dictionary:
+				# 1. Copiamos los datos guardados del jugador sobre nuestro diccionario
+				for key in loaded_data.keys():
+					game_data[key] = loaded_data[key]
+				
+				# 2. Re-guardamos para que el archivo del disco se actualice con las claves nuevas
+				save_game()

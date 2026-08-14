@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var controls: int
+@onready var play_games_achievements_client: PlayGamesAchievementsClient = $PlayGamesAchievementsClient
 
 func _ready() -> void:
 	# 1. Cargar la partida guardada
@@ -23,6 +24,8 @@ func _on_user_authenticated(is_authenticated: bool) -> void:
 		# Enviar la puntuación máxima una vez confirmado el inicio de sesión
 		if has_node("PlayGamesLeaderboardsClient"):
 			$PlayGamesLeaderboardsClient.submit_score("CgkIsK7QhPMZEAIQAQ", int(GlobalSave.game_data["max_score"]))
+			if GlobalSave.game_data["AliensKilled"] != 0:
+				play_games_achievements_client.unlock_achievement("CgkIsK7QhPMZEAIQAg")
 	else:
 		get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")
 		print("❌ Error: Usuario no autenticado en Google Play Games.")
@@ -82,3 +85,8 @@ func _on_score_btn_button_down() -> void:
 		$PlayGamesLeaderboardsClient.show_leaderboard("CgkIsK7QhPMZEAIQAQ")
 		# O si usas show_all_leaderboards:
 		# $PlayGamesLeaderboardsClient.show_all_leaderboards()
+
+
+func _on_badges_button_down() -> void:
+	# Abre la ventana con todos los logros
+	play_games_achievements_client.show_achievements()

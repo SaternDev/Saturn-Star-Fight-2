@@ -78,7 +78,8 @@ func playerLifes():
 	if GlobalSave.game_data["max_score"] < points:
 		GlobalSave.game_data["max_score"] = points
 	if live < 1 and ship.animationEnded:
-		$"../PlayGamesLeaderboardsClient".submit_score("CgkIsK7QhPMZEAIQAQ", int(points))
+		if Engine.has_singleton("GodotPlayGameServices"):
+			$"../PlayGamesLeaderboardsClient".submit_score("CgkIsK7QhPMZEAIQAQ", int(points))
 		get_tree().current_scene.add_child(GAME_OVER_MENU.instantiate())
 		
 		$"../game_ui".visible = false
