@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://csy2hancjuvgm"]
+
+[ext_resource type="Script" uid="uid://do8qj2xni6nrf" path="res://Scripts/Enemies/Alien/alien_spawner.gd" id="1_wuet8"]
+
+[node name="AlienSpawner" type="Node2D" unique_id=1086242512]
+script = ExtResource("1_wuet8")
+
+[node name="Position 1" type="Node2D" parent="." unique_id=454303817]
+position = Vector2(34, 70)
+
+[node name="Position 2" type="Node2D" parent="." unique_id=1771941349]
+position = Vector2(291, 70)
+
+[node name="SpawnCooldown" type="Timer" parent="." unique_id=139217165]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="SpawnCooldown" to="." method="_on_spawn_cooldown_timeout"]

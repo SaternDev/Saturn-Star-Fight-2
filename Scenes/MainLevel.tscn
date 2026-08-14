@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bv3ayibh8rgu0"]
 
+[ext_resource type="PackedScene" uid="uid://csy2hancjuvgm" path="res://Resources/Enemies/Alien/alien_spawner.tscn" id="4_0e82a"]
 [ext_resource type="Script" uid="uid://beksrhjf835kf" path="res://Scripts/game_controller.gd" id="4_o15vh"]
 [ext_resource type="PackedScene" uid="uid://du8jrp4avdx0o" path="res://UI/game_ui.tscn" id="5_2a20n"]
 [ext_resource type="PackedScene" uid="uid://bsjogu5ckvuhv" path="res://Resources/Meteor/meteor_spawner.tscn" id="5_ymtjv"]
@@ -24,6 +25,8 @@ autostart = true
 
 [node name="MeteorSpawner" parent="." unique_id=674383752 instance=ExtResource("5_ymtjv")]
 position = Vector2(0, -65)
+
+[node name="AlienSpawner" parent="." unique_id=1086242512 instance=ExtResource("4_0e82a")]
 
 [node name="Limits" type="Node2D" parent="." unique_id=393238903]
 

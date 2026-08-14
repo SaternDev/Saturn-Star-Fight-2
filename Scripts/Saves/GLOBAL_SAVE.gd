@@ -10,7 +10,8 @@ var game_data : Dictionary = {
 	"music_volumen" = 100,
 	"BlastoinBuyed" = false,
 	"HorizonAtlasBuyed" = false,
-	"ChritmasBuyed" = false
+	"ChritmasBuyed" = false,
+	"AliensKilled" = 0
 }
 
 func save_game() -> void:

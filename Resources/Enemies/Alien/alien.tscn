@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://l15kr8ip8lbb"]
+
+[ext_resource type="Script" uid="uid://cm37hoes4tow4" path="res://Scripts/Enemies/Alien/alien.gd" id="1_lj5r4"]
+[ext_resource type="Texture2D" uid="uid://eg4576j0d3hq" path="res://Sprites/Enemies/Alien/AlienSpriteSheet.png" id="1_yiv2t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj5r4"]
+atlas = ExtResource("1_yiv2t")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vjsj"]
+atlas = ExtResource("1_yiv2t")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cla7a"]
+atlas = ExtResource("1_yiv2t")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gopls"]
+atlas = ExtResource("1_yiv2t")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujtno"]
+atlas = ExtResource("1_yiv2t")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vjsj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj5r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vjsj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cla7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gopls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujtno")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lj5r4"]
+radius = 17.029387
+
+[node name="Alien" type="Area2D" unique_id=440700177]
+collision_layer = 7
+collision_mask = 3
+script = ExtResource("1_lj5r4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1947603826]
+sprite_frames = SubResource("SpriteFrames_2vjsj")
+
+[node name="ShootCooldown" type="Timer" parent="." unique_id=1177331394]
+wait_time = 7.0
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=79911458]
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_lj5r4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]

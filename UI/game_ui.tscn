@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://du8jrp4avdx0o"]
+[gd_scene format=3 uid="uid://du8jrp4avdx0o"]
 
 [ext_resource type="Script" uid="uid://bxxj8sryr4vu0" path="res://Scripts/GameUIScripts/game_ui.gd" id="1_kfjql"]
 [ext_resource type="Texture2D" uid="uid://csllpi5sn6o2x" path="res://Sprites/HealthBar/HealBarShip.png" id="1_mp46i"]
 [ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="3_h0rig"]
 
-[node name="game_ui" type="CanvasLayer"]
+[node name="game_ui" type="CanvasLayer" unique_id=162280507]
 process_mode = 3
 script = ExtResource("1_kfjql")
 
-[node name="GameUI" type="Control" parent="."]
+[node name="GameUI" type="Control" parent="." unique_id=1372866278]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Lives" type="HBoxContainer" parent="GameUI"]
+[node name="Lives" type="HBoxContainer" parent="GameUI" unique_id=1257505434]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -26,35 +26,36 @@ offset_top = 7.0
 offset_bottom = 44.0
 grow_horizontal = 0
 
-[node name="HealthImg" type="TextureRect" parent="GameUI/Lives"]
+[node name="HealthImg" type="TextureRect" parent="GameUI/Lives" unique_id=1529780802]
 layout_mode = 2
 texture = ExtResource("1_mp46i")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Difficultity" type="HBoxContainer" parent="GameUI"]
+[node name="Difficultity" type="HBoxContainer" parent="GameUI" unique_id=1299887064]
 visible = false
 layout_mode = 0
 offset_top = 32.0
 offset_right = 104.0
 offset_bottom = 72.0
 
-[node name="DifficultityTxt" type="Label" parent="GameUI/Difficultity"]
+[node name="DifficultityTxt" type="Label" parent="GameUI/Difficultity" unique_id=1257797789]
 layout_mode = 2
 text = "GameUI_lbl_Difficulty"
 
-[node name="Difficultity" type="Label" parent="GameUI/Difficultity"]
+[node name="Difficultity" type="Label" parent="GameUI/Difficultity" unique_id=611627713]
 layout_mode = 2
 text = "0"
 
-[node name="Points" type="VBoxContainer" parent="GameUI"]
+[node name="Points" type="VBoxContainer" parent="GameUI" unique_id=1316575756]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 45.0
+offset_top = 24.0
 offset_right = 144.0
-offset_bottom = 85.0
+offset_bottom = 64.0
 
-[node name="PointsLabel" type="Label" parent="GameUI/Points"]
+[node name="PointsLabel" type="Label" parent="GameUI/Points" unique_id=1478024278]
+modulate = Color(1, 1, 1, 0.3254902)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.2098163, 0.25635746, 0.83649105, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -63,7 +64,7 @@ theme_override_fonts/font = ExtResource("3_h0rig")
 theme_override_font_sizes/font_size = 32
 text = "prueba"
 
-[node name="Pause" type="Button" parent="GameUI"]
+[node name="Pause" type="Button" parent="GameUI" unique_id=182171498]
 process_mode = 3
 layout_mode = 0
 offset_right = 8.0
@@ -71,7 +72,7 @@ offset_bottom = 8.0
 theme_override_fonts/font = ExtResource("3_h0rig")
 text = "GameUI_btn_Pause"
 
-[node name="PausedMenu" type="VBoxContainer" parent="GameUI"]
+[node name="PausedMenu" type="VBoxContainer" parent="GameUI" unique_id=285599729]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -86,14 +87,14 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PausedLbl" type="Label" parent="GameUI/PausedMenu"]
+[node name="PausedLbl" type="Label" parent="GameUI/PausedMenu" unique_id=408090609]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.99999994, 0.1943762, 0.14415282, 1)
 theme_override_fonts/font = ExtResource("3_h0rig")
 theme_override_font_sizes/font_size = 32
 text = "GameUI_lbl_Paused"
 
-[node name="StarmenuBtn" type="Button" parent="GameUI/PausedMenu"]
+[node name="StarmenuBtn" type="Button" parent="GameUI/PausedMenu" unique_id=368666364]
 z_index = 1
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.19607843, 0.14509805, 1)

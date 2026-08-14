@@ -1,6 +1,8 @@
 class_name Meteor
 extends RigidBody2D
 
+var pointsGain = 1
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var gameController = get_tree().current_scene.get_child(0)
 @onready var game_ui = get_tree().current_scene.get_child(1)
@@ -21,6 +23,7 @@ func _physics_process(_delta: float) -> void:
 		var speed = get_parent().MeteorSpeed
 		linear_velocity.y = speed
 	else:
+		freeze = true
 		linear_velocity = Vector2.ZERO
 	
 	# Espera a que termine la animación de destrucción para borrar el nodo
@@ -32,8 +35,8 @@ func _on_body_entered(body: Node) -> void:
 		body.Destroy()
 		destroying = true
 		animated_sprite_2d.play("Explosión")
-		gameController.PointsGained()
-		
+		gameController.PointsGained(pointsGain)
+	
 	if body.is_in_group("Players"):
 		if not destroying: 
 			body.playerHit()

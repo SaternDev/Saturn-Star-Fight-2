@@ -71,8 +71,8 @@ func _process(_delta: float) -> void:
 			live = player.lives
 			
 
-func PointsGained():
-	points += 1
+func PointsGained(point):
+	points += point
 
 func playerLifes():
 	if GlobalSave.game_data["max_score"] < points:
