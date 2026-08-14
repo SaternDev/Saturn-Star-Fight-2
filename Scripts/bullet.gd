@@ -17,5 +17,6 @@ func Destroy():
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Meteor:
-		Destroy()
+		if not body.destroying:
+			Destroy()
 		body.destroy()

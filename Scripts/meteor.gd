@@ -7,7 +7,7 @@ var pointsGain = 1
 @onready var gameController = get_tree().current_scene.get_child(0)
 @onready var game_ui = get_tree().current_scene.get_child(1)
 
-var destroying = false
+@export var destroying = false
 
 func _ready() -> void:
 	animated_sprite_2d.play("Idle")
