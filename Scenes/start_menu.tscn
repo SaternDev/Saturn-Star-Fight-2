@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://ci33fslr24nwm" path="res://Scripts/GameUIScripts/start_menu.gd" id="1_juhg0"]
 [ext_resource type="FontFile" uid="uid://bhnb473avb6yy" path="res://Fonts/ScoreFont/BoldPixels.otf" id="2_8u0lp"]
-[ext_resource type="AudioStream" uid="uid://bku5ldi1bxstp" path="res://Audio/MúsicaMenuInicial.mp3" id="2_jgtwh"]
 [ext_resource type="Texture2D" uid="uid://bk6pbfgfyl7m0" path="res://Imagenes/MainMenuBackground.png" id="3_626he"]
 [ext_resource type="PackedScene" uid="uid://cf3mkoxoyfy2x" path="res://UI/patch_notes.tscn" id="3_m6uer"]
+[ext_resource type="AudioStream" uid="uid://ff348tj8bp57" path="res://Audio/Músic/Cyber_Space.wav" id="3_ru7em"]
 [ext_resource type="PackedScene" uid="uid://023j7hx0jj52" path="res://UI/shop.tscn" id="4_a43kq"]
 [ext_resource type="Script" uid="uid://decufg0g864rg" path="res://addons/GodotPlayGameServices/scripts/leaderboards/leaderboards_client.gd" id="7_lfskg"]
 [ext_resource type="Script" uid="uid://bp3aojushfo" path="res://addons/GodotPlayGameServices/scripts/sign_in/sign_in_client.gd" id="8_ru7em"]
@@ -103,8 +103,8 @@ theme_override_fonts/font = ExtResource("2_8u0lp")
 text = "Menu_lbl_TotalPoints"
 
 [node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu" unique_id=681622935]
-stream = ExtResource("2_jgtwh")
-volume_db = -12.429
+stream = ExtResource("3_ru7em")
+volume_db = -22.464
 autoplay = true
 mix_target = 2
 
