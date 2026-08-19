@@ -2,10 +2,12 @@ extends Area2D
 
 var destroying = false
 var pointsGain = 2
-
 var life = 5
 
+const BULLET_ALIEN = preload("uid://d1idj2mari4iu")
+
 @onready var gameController = get_tree().current_scene.get_child(0)
+@onready var bullet_spawn: Node2D = $BulletSpawn
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,8 +25,10 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_shoot_cooldown_timeout() -> void:
-	pass # Replace with function body.
-
+	var bullet_alienInstantiate = BULLET_ALIEN.instantiate()
+	bullet_alienInstantiate.position = bullet_spawn.global_position
+	get_tree().current_scene.add_child(bullet_alienInstantiate)
+	$ShootCooldown.start(7)
 
 func _on_area_entered(area: Area2D) -> void:
 	print("Body Entered")
@@ -34,6 +38,7 @@ func _on_area_entered(area: Area2D) -> void:
 			destroying = true
 			#animated_sprite_2d.play("Explosión")
 			gameController.PointsGained(pointsGain)
-	else:
+	elif area is Bullet:
 		area.queue_free()
 		life -= 1
+		
