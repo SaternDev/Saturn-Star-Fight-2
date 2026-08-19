@@ -41,4 +41,3 @@ func _on_area_entered(area: Area2D) -> void:
 	elif area is Bullet:
 		area.queue_free()
 		life -= 1
-		

@@ -4,19 +4,23 @@
 [ext_resource type="Script" uid="uid://c7nrjvr3cyq6e" path="res://Scripts/Enemies/Alien/bullet_alien.gd" id="1_p0o60"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qsjqt"]
-radius = 3.0
+radius = 3.4690812
 height = 16.0
 
-[node name="Area2D" type="Area2D" unique_id=863104624]
+[node name="AlienBullet" type="Area2D" unique_id=863104624]
 collision_mask = 5
 script = ExtResource("1_p0o60")
+speed = 280.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=614914110]
 position = Vector2(0, -1)
 rotation = -3.1342063
-scale = Vector2(0.59375, 0.59375)
+scale = Vector2(1.7115483, 1.7115483)
 texture = ExtResource("1_7puby")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=148882834]
 position = Vector2(0, 1)
+scale = Vector2(2.882608, 2.882608)
 shape = SubResource("CapsuleShape2D_qsjqt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
