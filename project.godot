@@ -46,6 +46,7 @@ enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg")
 [global_group]
 
 Players=""
+Enemies=""
 
 [input]
 
