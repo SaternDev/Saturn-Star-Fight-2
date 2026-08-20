@@ -104,7 +104,7 @@ text = "Menu_lbl_TotalPoints"
 
 [node name="MúsicaMenuInicial" type="AudioStreamPlayer" parent="StartMenu" unique_id=681622935]
 stream = ExtResource("3_ru7em")
-volume_db = -22.464
+volume_db = -8.78
 autoplay = true
 mix_target = 2
 
