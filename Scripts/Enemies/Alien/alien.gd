@@ -49,7 +49,7 @@ func _on_shoot_cooldown_timeout() -> void:
 	var bullet_alienInstantiate = BULLET_ALIEN.instantiate()
 	bullet_alienInstantiate.position = bullet_spawn.global_position
 	get_tree().current_scene.add_child(bullet_alienInstantiate)
-	$ShootCooldown.start(5)
+	$ShootCooldown.start(4)
 
 func _on_area_entered(area: Area2D) -> void:
 	if life < 2:
