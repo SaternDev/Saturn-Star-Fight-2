@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cm37hoes4tow4" path="res://Scripts/Enemies/Alien/alien.gd" id="1_lj5r4"]
 [ext_resource type="Texture2D" uid="uid://eg4576j0d3hq" path="res://Sprites/Enemies/Alien/AlienSpriteSheet.png" id="1_yiv2t"]
+[ext_resource type="AudioStream" uid="uid://bd4tiayvwlur4" path="res://Audio/Alien/AlienShoot.mp3" id="3_2vjsj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lj5r4"]
 atlas = ExtResource("1_yiv2t")
@@ -68,6 +69,10 @@ shape = SubResource("CircleShape2D_lj5r4")
 
 [node name="BulletSpawn" type="Node2D" parent="." unique_id=10279512]
 position = Vector2(0, 39)
+
+[node name="Sounds" type="AudioStreamPlayer" parent="." unique_id=730059881]
+stream = ExtResource("3_2vjsj")
+volume_db = -0.305
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="ShootCooldown" to="." method="_on_shoot_cooldown_timeout"]
