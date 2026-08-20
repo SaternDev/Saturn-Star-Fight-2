@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://sd0vwe857b1b"]
+[gd_scene format=3 uid="uid://sd0vwe857b1b"]
 
 [ext_resource type="Script" uid="uid://3y74sikc485a" path="res://Scripts/Ships/Blastoin.gd" id="1_4hsde"]
 [ext_resource type="Texture2D" uid="uid://cfr4s7bktq1ko" path="res://Sprites/ShipSprites/Blastoin/Blastoin_SpriteSheet.png" id="3_4hsde"]
@@ -85,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hmmf6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Explosion",
 "speed": 6.0
 }, {
@@ -99,7 +99,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cxyrt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"MovementLeft",
 "speed": 5.0
 }, {
@@ -113,7 +113,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b3xf2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"MovementRight",
 "speed": 5.0
 }, {
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qcgn3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -136,32 +136,32 @@ animations = [{
 radius = 5.221516
 height = 16.0
 
-[node name="PlayerShip" type="CharacterBody2D" groups=["Players"]]
+[node name="PlayerShip" type="CharacterBody2D" unique_id=1209771357 groups=["Players"]]
 motion_mode = 1
 script = ExtResource("1_4hsde")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=852735833]
 position = Vector2(0.99999976, 0)
 scale = Vector2(1.5321219, 1.5321219)
 sprite_frames = SubResource("SpriteFrames_318x0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1305294487]
 position = Vector2(0, -7)
 scale = Vector2(1.6591749, 2.0909045)
 shape = SubResource("CapsuleShape2D_idj7w")
 
-[node name="BulletSpawn" type="Node2D" parent="."]
+[node name="BulletSpawn" type="Node2D" parent="." unique_id=191431449]
 position = Vector2(-15, -25)
 scale = Vector2(1.5321219, 1.5321219)
 
-[node name="BulletSpawn2" type="Node2D" parent="."]
+[node name="BulletSpawn2" type="Node2D" parent="." unique_id=378687639]
 position = Vector2(15, -25.000002)
 scale = Vector2(1.5321219, 1.5321219)
 
-[node name="ShootCooldown" type="Timer" parent="."]
+[node name="ShootCooldown" type="Timer" parent="." unique_id=1810724972]
 wait_time = 0.3
 one_shot = true
 
-[node name="ShootAudio" type="AudioStreamPlayer" parent="."]
+[node name="ShootAudio" type="AudioStreamPlayer" parent="." unique_id=843020937]
 stream = ExtResource("5_j712x")
 volume_db = -20.0
